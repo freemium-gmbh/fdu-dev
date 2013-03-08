@@ -1,0 +1,209 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Style x:Key="SocialButton"
+		   TargetType="{x:Type Button}">
+		<Setter Property="Width"
+				Value="80" />
+		<Setter Property="Height"
+				Value="27" />
+		<Setter Property="Control.HorizontalAlignment"
+				Value="Left" />
+		<Setter Property="Control.VerticalAlignment"
+				Value="Top" />
+		<Setter Property="Control.HorizontalContentAlignment"
+				Value="Left" />
+		<Setter Property="Control.VerticalContentAlignment"
+				Value="Top" />
+		<Setter Property="TextElement.FontFamily"
+				Value="/FreemiumUtilites;component/Fonts/#Helvetica Neue CE 55" />
+		<Setter Property="TextElement.FontSize"
+				Value="12" />
+		<Setter Property="Foreground"
+				Value="#FFFFFF" />
+		<Setter Property="Border.BorderThickness"
+				Value="1" />
+		<Setter Property="Effect">
+			<Setter.Value>
+				<DropShadowEffect BlurRadius="2"
+								  Direction="-90"
+								  Color="#000000"
+								  Opacity=".2"
+								  ShadowDepth="1" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="FacebookButton"
+		   BasedOn="{StaticResource SocialButton}"
+		   TargetType="{x:Type Button}">
+		<Setter Property="Border.BorderBrush">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1"
+									 StartPoint="0.5,0">
+					<GradientStop Color="#003965"
+								  Offset="1" />
+					<GradientStop Color="#003965" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Margin="{TemplateBinding FrameworkElement.Margin}"
+							Background="{TemplateBinding Panel.Background}"
+							BorderBrush="{TemplateBinding Border.BorderBrush}"
+							BorderThickness="{TemplateBinding Border.BorderThickness}"
+							CornerRadius="3">
+						<Border CornerRadius="3"
+								BorderThickness="1,0,1,1">
+							<Border.BorderBrush>
+								<LinearGradientBrush EndPoint="0.5,1"
+													 StartPoint="0.5,0">
+									<GradientStop Color="#FF1A5A8E"
+												  Offset="1" />
+									<GradientStop Color="#FF1B7ABD" />
+								</LinearGradientBrush>
+
+							</Border.BorderBrush>
+							<Border BorderThickness="0,1,0,0"
+									BorderBrush="#539CD0">
+								<Border.Background>
+									<LinearGradientBrush EndPoint="0.5,1"
+														 StartPoint="0.5,0">
+										<GradientStop Color="#FF004984"
+													  Offset="1" />
+										<GradientStop Color="#FF006CB9" />
+									</LinearGradientBrush>
+								</Border.Background>
+								<ContentPresenter TextElement.Foreground="{TemplateBinding TextElement.Foreground}"
+												  TextElement.FontSize="{TemplateBinding TextElement.FontSize}"
+												  Margin="{TemplateBinding Control.Padding}"
+												  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+												  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+									<ContentPresenter.Effect>
+										<DropShadowEffect Direction="-90"
+														  ShadowDepth="1"
+														  Opacity="0.3"
+														  Color="#000000"
+														  BlurRadius="0" />
+									</ContentPresenter.Effect>
+								</ContentPresenter>
+							</Border>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="TwitterButton"
+		   BasedOn="{StaticResource SocialButton}"
+		   TargetType="{x:Type Button}">
+		<Setter Property="Border.BorderBrush"
+				Value="#0184CA" />
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Margin="{TemplateBinding FrameworkElement.Margin}"
+							Background="{TemplateBinding Panel.Background}"
+							BorderBrush="{TemplateBinding Border.BorderBrush}"
+							BorderThickness="{TemplateBinding Border.BorderThickness}"
+							CornerRadius="3">
+						<Border CornerRadius="3"
+								BorderThickness="1,0,1,1">
+							<Border.BorderBrush>
+								<LinearGradientBrush EndPoint="0.5,1"
+													 StartPoint="0.5,0">
+									<GradientStop Color="#34A9FD"
+												  Offset="1" />
+									<GradientStop Color="#3CD0FE" />
+								</LinearGradientBrush>
+
+							</Border.BorderBrush>
+							<Border BorderThickness="0,1,0,0"
+									BorderBrush="#67DBFE">
+								<Border.Background>
+									<LinearGradientBrush EndPoint="0.5,1"
+														 StartPoint="0.5,0">
+										<GradientStop Color="#0196FD"
+													  Offset="1" />
+										<GradientStop Color="#01C3FE" />
+									</LinearGradientBrush>
+								</Border.Background>
+								<ContentPresenter TextElement.Foreground="{TemplateBinding TextElement.Foreground}"
+												  TextElement.FontSize="{TemplateBinding TextElement.FontSize}"
+												  Margin="{TemplateBinding Control.Padding}"
+												  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+												  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+									<ContentPresenter.Effect>
+										<DropShadowEffect Direction="-90"
+														  ShadowDepth="1"
+														  Opacity="0.3"
+														  Color="#000000"
+														  BlurRadius="0" />
+									</ContentPresenter.Effect>
+								</ContentPresenter>
+							</Border>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="GooglePlusButton"
+		   BasedOn="{StaticResource SocialButton}"
+		   TargetType="{x:Type Button}">
+		<Setter Property="Border.BorderBrush"
+				Value="#343434" />
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Margin="{TemplateBinding FrameworkElement.Margin}"
+							Background="{TemplateBinding Panel.Background}"
+							BorderBrush="{TemplateBinding Border.BorderBrush}"
+							BorderThickness="{TemplateBinding Border.BorderThickness}"
+							CornerRadius="3">
+						<Border CornerRadius="3"
+								BorderThickness="1,0,1,1">
+							<Border.BorderBrush>
+								<LinearGradientBrush EndPoint="0.5,1"
+													 StartPoint="0.5,0">
+									<GradientStop Color="#615F5F"
+												  Offset="1" />
+									<GradientStop Color="#797575" />
+								</LinearGradientBrush>
+							</Border.BorderBrush>
+							<Border BorderThickness="0,1,0,0"
+									BorderBrush="#C8C4C4">
+								<Border.Background>
+									<LinearGradientBrush EndPoint="0.5,1"
+														 StartPoint="0.5,0">
+										<GradientStop Color="#3B3838"
+													  Offset="1" />
+										<GradientStop Color="#565151" />
+									</LinearGradientBrush>
+								</Border.Background>
+								<ContentPresenter TextElement.Foreground="{TemplateBinding TextElement.Foreground}"
+												  TextElement.FontSize="{TemplateBinding TextElement.FontSize}"
+												  Margin="{TemplateBinding Control.Padding}"
+												  HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+												  VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+									<ContentPresenter.Effect>
+										<DropShadowEffect Direction="-90"
+														  ShadowDepth="1"
+														  Opacity="0.3"
+														  Color="#000000"
+														  BlurRadius="0" />
+									</ContentPresenter.Effect>
+								</ContentPresenter>
+							</Border>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>

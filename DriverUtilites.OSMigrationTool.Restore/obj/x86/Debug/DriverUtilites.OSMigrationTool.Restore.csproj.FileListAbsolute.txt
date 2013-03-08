@@ -1,0 +1,82 @@
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\DriverUtilites.Infrastructure.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\Ionic.Zip.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\System.Tuples.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\WPFLocalizeExtension.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Themes\Blue\Theme.xaml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Themes\Green\Theme.xaml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Themes\Red\Theme.xaml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\DriverUtilites.OSMigrationTool.Restore.exe.config
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\DriverUtilites.OSMigrationTool.Restore.exe
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\DriverUtilites.OSMigrationTool.Restore.pdb
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\de-DE\DriverUtilites.OSMigrationTool.Restore.resources.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Ionic.Zip.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.csprojResolveAssemblyReference.cache
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelDriversToinstallSelection.baml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstallFinished.baml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\App.baml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\MainWindow.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstalling.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelDriversToinstallSelection.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstallFinished.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\App.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_Content.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_MarkupCompile.cache
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_MarkupCompile.lref
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\MainWindow.baml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstalling.baml
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.g.resources
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.Properties.Resources.resources
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.Properties.Resources.de-DE.resources
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.csproj.GenerateResource.Cache
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\de-DE\DriverUtilites.OSMigrationTool.Restore.resources.dll
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.exe
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.pdb
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\Ionic.Zip.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\System.Tuples.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\WPFLocalizeExtension.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Themes\Blue\Theme.xaml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Themes\Green\Theme.xaml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Themes\Red\Theme.xaml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Libraries\DriverUtilites.Infrastructure.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\DriverUtilites.OSMigrationTool.Restore.exe.config
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\DriverUtilites.OSMigrationTool.Restore.exe
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\DriverUtilites.OSMigrationTool.Restore.pdb
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\de-DE\DriverUtilites.OSMigrationTool.Restore.resources.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\bin\Debug\Ionic.Zip.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.csprojResolveAssemblyReference.cache
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelDriversToinstallSelection.baml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstallFinished.baml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\App.baml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\MainWindow.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstalling.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelDriversToinstallSelection.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstallFinished.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\App.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_Content.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_MarkupCompile.cache
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_MarkupCompile.lref
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\MainWindow.baml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstalling.baml
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.g.resources
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.Properties.Resources.resources
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.Properties.Resources.de-DE.resources
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.csproj.GenerateResource.Cache
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\de-DE\DriverUtilites.OSMigrationTool.Restore.resources.dll
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.exe
+E:\Alex\Work\Freelance\Null Kuhl\Driver Utilities\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.pdb
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.csprojResolveAssemblyReference.cache
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelDriversToinstallSelection.baml
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstallFinished.baml
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\App.baml
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\MainWindow.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstalling.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelDriversToinstallSelection.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\Views\PanelInstallFinished.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\App.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_Content.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_MarkupCompile.cache
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore_MarkupCompile.lref
+E:\Work\DriverUtilities\Current\Driver Utilities App\DriverUtilites.OSMigrationTool.Restore\obj\x86\Debug\DriverUtilites.OSMigrationTool.Restore.exe
