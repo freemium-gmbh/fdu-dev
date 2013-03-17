@@ -130,7 +130,7 @@
 												Margin="4,1,0,0">
 
 										<Button Style="{StaticResource OptionsLink}"
-                                                Command="{Binding DataContext.ShowDriverInfoCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                Command="{Binding DataContext.GetDriverInfoForUpdateNeededDeviceCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
 												CommandParameter="{Binding Id}"
                                                 IsEnabled="{Binding DataContext.InitialScanFinished, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
                                             <Button.ToolTip>

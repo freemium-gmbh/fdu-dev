@@ -122,9 +122,14 @@ namespace DriverUtilites.ViewModels
                 ExecuteDelegate = ExcludeDevice
             };
 
-            showDriverInfoCommand = new SimpleCommand
+            getDriverInfoForUpdateNeededDeviceCommand = new SimpleCommand
             {
-                ExecuteDelegate = ShowDriverInfo
+                ExecuteDelegate = GetDriverInfoForUpdateNeededDevice
+            };
+
+            getDriverInfoForExcludedDeviceCommand = new SimpleCommand
+            {
+                ExecuteDelegate = GetDriverInfoForExcludedDevice
             };
 
             checkDevicesForIncludeCommand = new SimpleCommand
@@ -188,15 +193,46 @@ namespace DriverUtilites.ViewModels
         #region Driver scan related commands
 
         readonly ICommand scanCommand;
+        readonly ICommand cancelScanCommand;
+        readonly ICommand showScanCommand;
+        readonly ICommand checkDevicesForUpdateCommand;
+        readonly ICommand checkDeviceForUpdateCommand;
+        readonly ICommand updateCommand;
+        readonly ICommand cancelUpdateCommand;
+
         public ICommand ScanCommand
         {
             get { return scanCommand; }
         }
 
-        readonly ICommand cancelScanCommand;
         public ICommand CancelScanCommand
         {
             get { return cancelScanCommand; }
+        }
+
+        public ICommand ShowScanCommand
+        {
+            get { return showScanCommand; }
+        }
+
+        public ICommand CheckDevicesForUpdateCommand
+        {
+            get { return checkDevicesForUpdateCommand; }
+        }
+
+        public ICommand CheckDeviceForUpdateCommand
+        {
+            get { return checkDeviceForUpdateCommand; }
+        }
+
+        public ICommand UpdateCommand
+        {
+            get { return updateCommand; }
+        }
+
+        public ICommand CancelUpdateCommand
+        {
+            get { return cancelUpdateCommand; }
         }
 
         void CancelScan()
@@ -204,35 +240,11 @@ namespace DriverUtilites.ViewModels
             RunCancelScan();
         }
 
-        readonly ICommand showScanCommand;
-        public ICommand ShowScanCommand
-        {
-            get { return showScanCommand; }
-        }
-
         void ShowScan()
         {
             RunShowScan();
         }
 
-        readonly ICommand checkDevicesForUpdateCommand;
-        public ICommand CheckDevicesForUpdateCommand
-        {
-            get { return checkDevicesForUpdateCommand; }
-        }
-        void CheckDevicesForUpdate()
-        {
-            foreach (DeviceInfo item in DevicesThatNeedsUpdate)
-            {
-                item.SelectedForUpdate = AllDevicesSelectedForUpdate;
-            }
-        }
-
-        readonly ICommand checkDeviceForUpdateCommand;
-        public ICommand CheckDeviceForUpdateCommand
-        {
-            get { return checkDeviceForUpdateCommand; }
-        }
         void CheckDeviceForUpdate(object selectedDevice)
         {
             if (!AllDevices.Any(d => d.NeedsUpdate && d.SelectedForUpdate))
@@ -248,17 +260,14 @@ namespace DriverUtilites.ViewModels
             }
         }
 
-        readonly ICommand updateCommand;
-        public ICommand UpdateCommand
+        void CheckDevicesForUpdate()
         {
-            get { return updateCommand; }
+            foreach (DeviceInfo item in DevicesThatNeedsUpdate)
+            {
+                item.SelectedForUpdate = AllDevicesSelectedForUpdate;
+            }
         }
 
-        readonly ICommand cancelUpdateCommand;
-        public ICommand CancelUpdateCommand
-        {
-            get { return cancelUpdateCommand; }
-        }
         void CancelUpdate()
         {
             RunCancelUpdate();
@@ -365,7 +374,7 @@ namespace DriverUtilites.ViewModels
                     if (devicesGroup != null && devicesGroup.Devices.Count(d => d.SelectedForBackup == false) == 0)
                     {
                         devicesGroup.GroupChecked = true;
-                    }         
+                    }
                 }
             }
         }
@@ -537,23 +546,29 @@ namespace DriverUtilites.ViewModels
         #endregion
 
         #region Driver Info related commands
-        readonly ICommand showDriverInfoCommand;
-        public ICommand ShowDriverInfoCommand
+        readonly ICommand getDriverInfoForUpdateNeededDeviceCommand;
+        readonly ICommand getDriverInfoForExcludedDeviceCommand;
+
+        public ICommand GetDriverInfoForUpdateNeededDeviceCommand
         {
-            get { return showDriverInfoCommand; }
+            get { return getDriverInfoForUpdateNeededDeviceCommand; }
         }
 
-        void ShowDriverInfo(object id)
+        public ICommand GetDriverInfoForExcludedDeviceCommand
+        {
+            get { return getDriverInfoForExcludedDeviceCommand; }
+        }
+
+        void ShowDriverInfo(DeviceInfo device)
         {
             Window mainWnd = Application.Current.MainWindow;
             DriverDetailInfoPopup driverInfoDetailPopup = new DriverDetailInfoPopup { Owner = mainWnd };
-            DeviceInfo device = AllDevices.FirstOrDefault(d => d.Id == (string)id);
-            if (device != null)
-            {
-                driverInfoDetailPopup.DriverName.Text = device.DeviceName;
+
+            driverInfoDetailPopup.DriverName.Text = device.DeviceName;
+            if (!string.IsNullOrEmpty(device.InstalledDriverDate))
                 driverInfoDetailPopup.DetailCurrentDriverDate.Text = device.InstalledDriverDate.ToString();
+            if (!string.IsNullOrEmpty(device.NewDriverDate))
                 driverInfoDetailPopup.DetailNewDriverDate.Text = device.NewDriverDate.ToString();
-            }
 
             driverInfoDetailPopup.Left = mainWnd.Left + (mainWnd.Width / 2 - driverInfoDetailPopup.Width / 2);
             int regToolsHeight = (int)driverInfoDetailPopup.Height;
@@ -571,9 +586,10 @@ namespace DriverUtilites.ViewModels
                  To = topFinal,
                  Duration = new Duration(TimeSpan.FromMilliseconds(fullAnimationDuration))
              };
+
             driverInfoDetailPopup.BeginAnimation(Window.TopProperty, slideUp);
 
-            var scaleUp = new DoubleAnimation
+            DoubleAnimation scaleUp = new DoubleAnimation
             {
                 From = 0,
                 To = regToolsHeight,
@@ -584,6 +600,25 @@ namespace DriverUtilites.ViewModels
             driverInfoDetailPopup.AnimateInnerBox();
 
             driverInfoDetailPopup.ShowDialog();
+        }
+
+        void GetDriverInfoForUpdateNeededDevice(object id)
+        {
+            DeviceInfo device = AllDevices.FirstOrDefault(d => d.Id == (string)id);
+            if (device != null)
+            {
+                ShowDriverInfo(device);
+            }
+
+        }
+
+        void GetDriverInfoForExcludedDevice(object id)
+        {
+            DeviceInfo device = ExcludedDevices.FirstOrDefault(d => d.Id == (string)id);
+            if (device != null)
+            {
+                ShowDriverInfo(device);
+            }
         }
         #endregion
 
@@ -1497,7 +1532,7 @@ namespace DriverUtilites.ViewModels
             }
             else
             {
-                WPFMessageBox.Show(Application.Current.MainWindow,WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToUpdate"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToUpdate"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
