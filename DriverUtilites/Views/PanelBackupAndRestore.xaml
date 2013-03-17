@@ -15,7 +15,7 @@
 	</UserControl.Resources>
 	<Grid Background="{StaticResource MainAreaBackGround}">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="211" />
+			<ColumnDefinition Width="220" />
 			<ColumnDefinition />
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
@@ -48,7 +48,7 @@
 			<!-- ItemsSource="{Binding BackupTypes}" -->
 			
 			<ListView Name="BackupTypesList"
-					  Width="429"
+					  Width="427"
 					  Height="201"
 					  ItemsSource="{Binding BackupTypes}"
 					  Visibility="Visible"
@@ -63,7 +63,7 @@
 				</ListView.Resources>
 				<ListView.View>
 					<GridView AllowsColumnReorder="False">
-						<GridViewColumn Width="270"
+						<GridViewColumn Width="260"
 										Header="{lex:LocText DriverUtilites:Resources:BackupType}"
 										CellTemplate="{StaticResource BackupType}" />
 					</GridView>
@@ -71,7 +71,7 @@
 			</ListView>
 			<Grid Name="BackupItemsList"
 				  Visibility="Collapsed">
-				<ListView Width="429"
+				<ListView Width="427"
 						  Height="201"
 						  ItemsSource="{Binding BackupItems}"
 						  SelectionMode="Single"
@@ -105,7 +105,7 @@
 				</ListView>
 				<TextBlock Text="{lex:LocText DriverUtilites:Resources:InitialLoading}"
 						   Style="{StaticResource ListViewItemLoadingTextBlock}"
-						   Visibility="{Binding Path=XMLItemsLoaded, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}"></TextBlock>
+						   Visibility="{Binding Path=XMLItemsLoaded, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=False}" Margin="0,0,34,0"></TextBlock>
 			</Grid>
 		</Grid>
 		<Border Grid.Row="4"

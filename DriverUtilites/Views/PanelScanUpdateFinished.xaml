@@ -52,11 +52,12 @@
 						<RowDefinition Height="37" />
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="134" />
-						<ColumnDefinition Width="91" />
-						<ColumnDefinition Width="90" />
-						<ColumnDefinition Width="270" />
-					</Grid.ColumnDefinitions>
+						<ColumnDefinition Width="180" />
+						<ColumnDefinition Width="120" />
+						<ColumnDefinition Width="120" />
+						<ColumnDefinition Width="165" />
+                        <ColumnDefinition Width="45*" />
+                    </Grid.ColumnDefinitions>
 
 					<Ellipse StrokeThickness="6"
 							 Stroke="#FFFFFF"
@@ -142,7 +143,7 @@
 						</Path.Effect>
 					</Path>
 
-					<TextBlock Margin="0,7,0,0"
+					<TextBlock Margin="-50,7,0,0"
 							   Grid.Column="1"
 							   Grid.ColumnSpan="3"
 							   Foreground="#FFFFFF"
@@ -160,7 +161,7 @@
 					<TextBlock Grid.Column="1"
 							   Grid.Row="1"
 							   Grid.ColumnSpan="3"
-							   Margin="0,4,0,0"
+							   Margin="-50,4,0,0"
 							   Foreground="#FFFFFF"
 							   FontFamily="/DriverUtilites.Infrastructure;component/Fonts/#Helvetica Neue CE 75"
 							   FontSize="17"
@@ -174,46 +175,34 @@
 						</TextBlock.Effect>
 					</TextBlock>
 
-					<Button Grid.Column="1"
-							Grid.Row="2"
-							Style="{StaticResource FacebookButton}"
-							Padding="12,4,0,0" Click="Click_Facebook">facebook</Button>
-					<Button Grid.Row="2"
-							Grid.Column="2"
-							Style="{StaticResource TwitterButton}"
-							Padding="21,4,0,0" Click="Click_Twitter">twitter</Button>
-					<Grid Grid.Row="2"
+                    <Button Grid.Column="1" Grid.Row="2" Padding="0,0,0,0" Click="Click_Facebook" Margin="-25,0,0,0" 
+                            Style="{StaticResource FacebookButton}" HorizontalAlignment="Left"  MinWidth="20" Height="20">
+                        <StackPanel MinWidth="20" MinHeight="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+                            <Image Source="/DriverUtilites;component/Images/facebook.png" Margin="0,-1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="18" Width="17" />
+                            <TextBlock Text="{lex:LocText DriverUtilites:Resources:FacebookLike}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,-15,0,0" FontSize="11" Padding="0,0,4,0"  Foreground="#FF3C5692">
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="2" Padding="21,4,0,0" Click="Click_Twitter"
+                            Style="{StaticResource TwitterButton}" Margin="-20,0,0,0" HorizontalAlignment="Left" MinWidth="34">
+                        <StackPanel MinWidth="20" MinHeight="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+                            <Image Source="/DriverUtilites;component/Images/tw.png"  Height="13.5" Width="13.5" Margin="-6,6,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <TextBlock Text="{lex:LocText DriverUtilites:Resources:Twitter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,-15,0,0" FontSize="11" Padding="0,0,4,0"  Foreground="#FF3C5692">
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Grid Grid.Row="2"
 						  Grid.Column="3"
 						  Grid.RowSpan="2">
-						<Button Grid.Row="1"
-								Grid.Column="2"
-								Style="{StaticResource GooglePlusButton}"
-								Padding="14,4,0,0" Click="Click_GooglePlus">
-							<TextBlock>Google
-									<TextBlock Margin="0,-3,0,0">+</TextBlock></TextBlock>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="42*" />
+                            <ColumnDefinition Width="228*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource GooglePlusButton}"
+								Padding="14,4,0,0" Click="Click_GooglePlus" HorizontalAlignment="Left">
 						</Button>
-						<StackPanel Orientation="Horizontal"
-									VerticalAlignment="Top"
-									HorizontalAlignment="Left">
-							<Border Background="#EEAA1010"
-									Width="20"
-									Height="4"
-									CornerRadius="2,0,0,0"></Border>
-							<Border Background="#EE406ED1"
-									Width="20"
-									Height="4"></Border>
-							<Border Background="#EE1D9E3B"
-									Width="20"
-									Height="4"></Border>
-							<Border Background="#EED8A910"
-									Width="20"
-									Height="4"
-									CornerRadius="0,0,2,0"></Border>
-						</StackPanel>
 					</Grid>
-
 				</Grid>
-
 			</Border>
 		</Border>
 

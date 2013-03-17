@@ -542,4 +542,25 @@ Select the folder for driver downloads</value>
   <data name="DetailNewDriverDate" xml:space="preserve">
     <value>Date of new version:</value>
   </data>
+  <data name="FacebookLike" xml:space="preserve">
+    <value>Like</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>Tweet</value>
+  </data>
+  <data name="FBUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/facebook</value>
+  </data>
+  <data name="GooglePlusUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/googleplus</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/twitter</value>
+  </data>
+  <data name="UrlCannotBeOpenedMessage" xml:space="preserve">
+    <value>Link cannot be opened automatically. Please open this Link in your favorite browser:</value>
+  </data>
+  <data name="UrlCannotBeOpenedTitle" xml:space="preserve">
+    <value>Link cannot be opened automatically</value>
+  </data>
 </root>

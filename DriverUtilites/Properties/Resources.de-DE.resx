@@ -539,4 +539,25 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
   <data name="DetailNewDriverDate" xml:space="preserve">
     <value>Datum der neuen Version:</value>
   </data>
+  <data name="FacebookLike" xml:space="preserve">
+    <value>Gefällt mir</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>Twittern</value>
+  </data>
+  <data name="FBUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/facebook</value>
+  </data>
+  <data name="GooglePlusUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/googleplus</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>http://www.freemium.com/fsu/twitter</value>
+  </data>
+  <data name="UrlCannotBeOpenedMessage" xml:space="preserve">
+    <value>Link kann nicht automatisch geöffnet werden. Bitte öffnen Sie folgenden Link in Ihrem favorisierten Browser:</value>
+  </data>
+  <data name="UrlCannotBeOpenedTitle" xml:space="preserve">
+    <value>Link kann nicht automatisch geöffnet werden</value>
+  </data>
 </root>

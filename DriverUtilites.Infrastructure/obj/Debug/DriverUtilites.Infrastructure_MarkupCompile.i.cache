@@ -16,5 +16,5 @@ DEBUG;TRACE
 11-2045912065
 WPFMessageBox\Themes\Generic.xaml;WPFMessageBox\WPFMessageBoxWindow.xaml;WPFPopupWindow\Themes\CoreStyles.Generic.xaml;WPFPopupWindow\Themes\Generic.xaml;WPFPopupWindow\Themes\ModalDialogHost.Generic.xaml;CommonStyles\ControlStyles.xaml;CommonStyles\ProgressBarStyles.xaml;CommonStyles\ScrollViewerStyles.xaml;CommonStyles\SocialButtonStyles.xaml;CommonStyles\WindowStyles.xaml;
 
-False
+True
 

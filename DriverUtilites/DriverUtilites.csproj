@@ -346,6 +346,10 @@
     <Content Include="difxapi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\facebook.png" />
+    <Resource Include="Images\google.png" />
+    <Resource Include="Images\tw.png" />
+    <Resource Include="Images\tw_bg.png" />
     <Content Include="stduhelper.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

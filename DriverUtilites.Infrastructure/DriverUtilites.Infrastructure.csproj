@@ -136,6 +136,10 @@
     <Resource Include="Images\icon-question.png" />
     <Resource Include="Images\icon-exclamation.png" />
     <Resource Include="Images\icon-err.png" />
+    <Resource Include="Images\facebook.png" />
+    <Resource Include="Images\google.png" />
+    <Resource Include="Images\tw.png" />
+    <Resource Include="Images\tw_bg.png" />
     <Content Include="Libraries\Ionic.Zip.dll" />
     <Content Include="Libraries\System.Tuples.dll" />
     <Content Include="Libraries\WPFLocalizeExtension.dll" />

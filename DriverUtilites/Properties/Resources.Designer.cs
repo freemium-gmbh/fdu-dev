@@ -484,6 +484,24 @@ namespace DriverUtilites.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Like.
+        /// </summary>
+        internal static string FacebookLike {
+            get {
+                return ResourceManager.GetString("FacebookLike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.freemium.com/fsu/facebook.
+        /// </summary>
+        internal static string FBUrl {
+            get {
+                return ResourceManager.GetString("FBUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Feedback Report.
         /// </summary>
         internal static string FeedbackReport {
@@ -534,6 +552,15 @@ namespace DriverUtilites.Properties {
         internal static string FromScans {
             get {
                 return ResourceManager.GetString("FromScans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.freemium.com/fsu/googleplus.
+        /// </summary>
+        internal static string GooglePlusUrl {
+            get {
+                return ResourceManager.GetString("GooglePlusUrl", resourceCulture);
             }
         }
         
@@ -1242,6 +1269,24 @@ namespace DriverUtilites.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tweet.
+        /// </summary>
+        internal static string Twitter {
+            get {
+                return ResourceManager.GetString("Twitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.freemium.com/fsu/twitter.
+        /// </summary>
+        internal static string TwitterUrl {
+            get {
+                return ResourceManager.GetString("TwitterUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
         internal static string Update {
@@ -1274,6 +1319,24 @@ namespace DriverUtilites.Properties {
         internal static string UpdateStart {
             get {
                 return ResourceManager.GetString("UpdateStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link cannot be opened automatically. Please open this Link in your favorite browser:.
+        /// </summary>
+        internal static string UrlCannotBeOpenedMessage {
+            get {
+                return ResourceManager.GetString("UrlCannotBeOpenedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link cannot be opened automatically.
+        /// </summary>
+        internal static string UrlCannotBeOpenedTitle {
+            get {
+                return ResourceManager.GetString("UrlCannotBeOpenedTitle", resourceCulture);
             }
         }
         
