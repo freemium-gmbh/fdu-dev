@@ -1,0 +1,20 @@
+﻿DriverUtilites
+
+
+winexe
+C#
+.cs
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites\obj\x86\Debug\
+DriverUtilites
+none
+false
+DEBUG;TRACE
+E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\DriverUtilites\App.xaml
+16735794658
+17797811190
+441115584451
+271109044767
+MainWindow.xaml;Views\AboutBox.xaml;Views\DriverDetailInfoPopup.xaml;Views\OSMigrationToolPopup.xaml;Views\PanelRestoreTargetsSelection.xaml;Views\PanelScanUpdateInProcess.xaml;Views\PanelRestoreFinished.xaml;Views\PanelBackupTargetsSelection.xaml;Views\PanelBackupFinished.xaml;Views\PanelScanUpdateNeeded.xaml;Views\PanelScanUpdateFinished.xaml;Views\PanelScanInProcess.xaml;Views\PanelScan.xaml;Views\PanelScanExclusions.xaml;Views\PanelBackupAndRestore.xaml;Views\PanelPreferences.xaml;
+
+False
+
