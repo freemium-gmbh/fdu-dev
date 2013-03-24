@@ -44,7 +44,7 @@ namespace ClickMaint
 				//get all other (possible) running instances
 				//   Process[] processes = Process.GetProcessesByName("DriverUtilities.vshost");
 
-				Process[] processes = Process.GetProcessesByName("DriverUtilites");
+				Process[] processes = Process.GetProcessesByName("FreeDriverScout");
 
 				string[] args = Environment.GetCommandLineArgs();
 
@@ -59,7 +59,7 @@ namespace ClickMaint
 					/*  MessageBox.Show("No other running applications found.");*/
 					var p = new Process
 					        	{
-					        		StartInfo = {FileName = Environment.CurrentDirectory + "\\DriverUtilites.exe", Arguments = "StartHidden"}
+					        		StartInfo = {FileName = Environment.CurrentDirectory + "\\FreeDriverScout.exe", Arguments = "StartHidden"}
 					        	};
 					//MessageBox.Show(p.StartInfo.FileName);
 					p.Start();

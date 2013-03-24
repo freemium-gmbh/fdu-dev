@@ -4,30 +4,30 @@
  <Namespaces>
   <Namespace Name="ClickMaint">
    <Messages>
-    <Message Id="Maint" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+    <Message Id="Maint" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Maint' in namespace name 'ClickMaint'.</Issue>
     </Message>
    </Messages>
   </Namespace>
  </Namespaces>
  <Targets>
-  <Target Name="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender\bin\Debug\1Click.exe">
+  <Target Name="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender\bin\Debug\1Click.exe">
    <Modules>
     <Module Name="1click.exe">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign '1Click.exe' with a strong name key.</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark '1Click.exe' with CLSCompliant(true) because it exposes externally visible types.</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
        <Issue Name="NoAttribute" Certainty="95" Level="CriticalError">Because '1Click.exe' exposes externally visible types, mark it with ComVisible(false) at the assembly level and then mark all types within the assembly that should be exposed to COM clients with ComVisible(true).</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Warning">Because assembly '1Click.exe' contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Issue>
       </Message>
-      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark the entry point method 'frmMain.Main()' in assembly '1Click.exe' with an STAThreadAttribute.</Issue>
       </Message>
      </Messages>
@@ -36,182 +36,182 @@
        <Types>
         <Type Name="frmMain" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="frm" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+          <Message Id="frm" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'frm' in type name 'frmMain' by changing it to 'Frm'.</Issue>
           </Message>
-          <Message Id="frm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+          <Message Id="frm" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'frm' in type name 'frmMain'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message Id="ClickMaint.frmMain.RegisterWindowMessage(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="DependsOnFix">
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="29">Method 'frmMain.frmMain()' passes a literal string as parameter 'message' of a call to 'frmMain.RegisterWindowMessage(string)'. Retrieve the following string(s) from a resource table instead: "WM_MDIRESTORE".</Issue>
+            <Message Id="ClickMaint.frmMain.RegisterWindowMessage(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="29">Method 'frmMain.frmMain()' passes a literal string as parameter 'message' of a call to 'frmMain.RegisterWindowMessage(string)'. Retrieve the following string(s) from a resource table instead: "WM_MDIRESTORE".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="DependsOnFix">
-             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="60">In method 'frmMain.frmMain()', call System.IDisposable.Dispose on object '&lt;&gt;g__initLocal0' before all references to it are out of scope.</Issue>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="60">In method 'frmMain.frmMain()', call System.IDisposable.Dispose on object '&lt;&gt;g__initLocal0' before all references to it are out of scope.</Issue>
             </Message>
-            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="DependsOnFix">
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="39">Method 'frmMain.frmMain()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "This process ID: ".</Issue>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="39">Method 'frmMain.frmMain()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "This process ID: ".</Issue>
             </Message>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="77">Modify 'frmMain.frmMain()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="77">Modify 'frmMain.frmMain()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
             </Message>
-            <Message Id="ClickMaint.frmMain.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
-             <Issue Name="HResultOrErrorCode" Certainty="95" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="54">'frmMain.frmMain()' calls 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Issue>
-             <Issue Name="HResultOrErrorCode" Certainty="95" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="68">'frmMain.frmMain()' calls 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Issue>
+            <Message Id="ClickMaint.frmMain.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
+             <Issue Name="HResultOrErrorCode" Certainty="95" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="54">'frmMain.frmMain()' calls 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Issue>
+             <Issue Name="HResultOrErrorCode" Certainty="95" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="68">'frmMain.frmMain()' calls 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Issue>
             </Message>
-            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.GetCurrentProcess()' which has a LinkDemand. By making this call, 'Process.GetCurrentProcess()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.GetProcessesByName(string)' which has a LinkDemand. By making this call, 'Process.GetProcessesByName(string)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.Id.get()' which has a LinkDemand. By making this call, 'Process.Id.get()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.Start()' which has a LinkDemand. By making this call, 'Process.Start()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.StartInfo.get()' which has a LinkDemand. By making this call, 'Process.StartInfo.get()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'ProcessStartInfo.Arguments.set(string)' which has a LinkDemand. By making this call, 'ProcessStartInfo.Arguments.set(string)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'ProcessStartInfo.FileName.set(string)' which has a LinkDemand. By making this call, 'ProcessStartInfo.FileName.set(string)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.GetCurrentProcess()' which has a LinkDemand. By making this call, 'Process.GetCurrentProcess()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.GetProcessesByName(string)' which has a LinkDemand. By making this call, 'Process.GetProcessesByName(string)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.Id.get()' which has a LinkDemand. By making this call, 'Process.Id.get()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.Start()' which has a LinkDemand. By making this call, 'Process.Start()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'Process.StartInfo.get()' which has a LinkDemand. By making this call, 'Process.StartInfo.get()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'ProcessStartInfo.Arguments.set(string)' which has a LinkDemand. By making this call, 'ProcessStartInfo.Arguments.set(string)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="35">'frmMain.frmMain()' calls into 'ProcessStartInfo.FileName.set(string)' which has a LinkDemand. By making this call, 'ProcessStartInfo.FileName.set(string)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.frmMain()'&#xD;&#xA;   -&gt;'frmMain.frmMain()'</Issue>
             </Message>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
-             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="39">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'frmMain.frmMain()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="39">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'frmMain.frmMain()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#HWND_BROADCAST" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="BROADCAST" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="BROADCAST" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'BROADCAST' in member name 'frmMain.HWND_BROADCAST' by changing it to 'Broadcast'.</Issue>
             </Message>
-            <Message Id="HWND" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="HWND" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'HWND' in member name 'frmMain.HWND_BROADCAST' by changing it to 'Hwnd'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'frmMain.HWND_BROADCAST'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="DependsOnFix">
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="143">Method 'frmMain.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Communicating via Messages Demo".</Issue>
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="119">Method 'frmMain.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Received Messages:".</Issue>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="143">Method 'frmMain.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Communicating via Messages Demo".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="119">Method 'frmMain.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Received Messages:".</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Main()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="DependsOnFix">
-             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="156">In method 'frmMain.Main()', call System.IDisposable.Dispose on object 'new frmMain()' before all references to it are out of scope.</Issue>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="156">In method 'frmMain.Main()', call System.IDisposable.Dispose on object 'new frmMain()' before all references to it are out of scope.</Issue>
             </Message>
-            <Message Id="ClickMaint.frmMain" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
-             <Issue Name="ObjectCreation" Certainty="95" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="156">'frmMain.Main()' creates a new instance of 'frmMain' which is never used. Pass the instance as an argument to another method, assign the instance to a variable, or remove the object creation if it is unnecessary.</Issue>
+            <Message Id="ClickMaint.frmMain" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
+             <Issue Name="ObjectCreation" Certainty="95" Level="Warning" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="156">'frmMain.Main()' creates a new instance of 'frmMain' which is never used. Pass the instance as an argument to another method, assign the instance to a variable, or remove the object creation if it is unnecessary.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#PostMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="hwnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="hwnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.PostMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'hwnd' in parameter name 'hwnd' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="lparam" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="lparam" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.PostMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'lparam' in parameter name 'lparam' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="wparam" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="wparam" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.PostMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'wparam' in parameter name 'wparam' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Return" Certainty="95" Level="Warning">Add the MarshalAsAttribute to the return type of P/Invoke 'frmMain.PostMessage(IntPtr, int, IntPtr, IntPtr)'. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Issue>
             </Message>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'frmMain.PostMessage(IntPtr, int, IntPtr, IntPtr)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
             </Message>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'frmMain.PostMessage(IntPtr, int, IntPtr, IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#RegisterWindowMessage(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'frmMain.RegisterWindowMessage(string)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
             </Message>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'frmMain.RegisterWindowMessage(string)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
-            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
              <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'message' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'Param' in parameter name 'lParam' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'Param' in parameter name 'wParam' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="hwnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="hwnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'hwnd' in parameter name 'hwnd' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="l" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="l" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'l' in parameter name 'lParam' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="w" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="w" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)', correct the spelling of 'w' in parameter name 'wParam' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
             </Message>
-            <Message Id="return" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="return" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Return" Certainty="95" Level="Error">As it is declared in your code, the return type of P/Invoke 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' will be 4 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'int'.</Issue>
             </Message>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'frmMain.SendMessage(IntPtr, int, IntPtr, IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SetForegroundWindow(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Wnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="Wnd" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SetForegroundWindow(IntPtr)', correct the spelling of 'Wnd' in parameter name 'hWnd' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="h" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="h" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning">In method 'frmMain.SetForegroundWindow(IntPtr)', correct the spelling of 'h' in parameter name 'hWnd' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Return" Certainty="95" Level="Warning">Add the MarshalAsAttribute to the return type of P/Invoke 'frmMain.SetForegroundWindow(IntPtr)'. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Issue>
             </Message>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'frmMain.SetForegroundWindow(IntPtr)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
             </Message>
-            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'frmMain.SetForegroundWindow(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#WM_ACTIVATEAPP" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="ACTIVATEAPP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message Id="ACTIVATEAPP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Correct the casing of 'ACTIVATEAPP' in member name 'frmMain.WM_ACTIVATEAPP' by changing it to 'Activateapp'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'frmMain.WM_ACTIVATEAPP'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#WndProc(System.Windows.Forms.Message&amp;)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="NonBreaking">
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="168">'frmMain.WndProc(ref Message)' calls into 'Form.WndProc(ref Message)' which has a LinkDemand. By making this call, 'Form.WndProc(ref Message)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'&#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'</Issue>
-             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="168">'frmMain.WndProc(ref Message)' calls into 'Message.Msg.get()' which has a LinkDemand. By making this call, 'Message.Msg.get()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'&#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'</Issue>
+            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="168">'frmMain.WndProc(ref Message)' calls into 'Form.WndProc(ref Message)' which has a LinkDemand. By making this call, 'Form.WndProc(ref Message)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'&#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="168">'frmMain.WndProc(ref Message)' calls into 'Message.Msg.get()' which has a LinkDemand. By making this call, 'Message.Msg.get()' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'&#xD;&#xA;   -&gt;'frmMain.WndProc(ref Message)'</Issue>
             </Message>
-            <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
-             <Issue Name="BaseOnly" Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="168">Add the following security attribute to 'frmMain.WndProc(ref Message)' in order to match a LinkDemand on base method 'Form.WndProc(ref Message)':  [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)].</Issue>
+            <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
+             <Issue Name="BaseOnly" Certainty="33" Level="CriticalError" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="168">Add the following security attribute to 'frmMain.WndProc(ref Message)' in order to match a LinkDemand on base method 'Form.WndProc(ref Message)':  [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)].</Issue>
             </Message>
-            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2013-03-17 09:23:59Z" FixCategory="Breaking">
-             <Issue Certainty="95" Level="Error" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Driver Utilities App\1ClickMessageSender" File="MainForm.cs" Line="168">In member 'frmMain.WndProc(ref Message)', change parameter name 'message' to 'm' in order to match the identifier as it has been declared in 'Form.WndProc(ref Message)'.</Issue>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2013-03-24 07:05:46Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="E:\Work\Freelance\Null Khul\Driver Utilities\Free Driver Scout\1ClickMessageSender" File="MainForm.cs" Line="168">In member 'frmMain.WndProc(ref Message)', change parameter name 'message' to 'm' in order to match the identifier as it has been declared in 'Form.WndProc(ref Message)'.</Issue>
             </Message>
            </Messages>
           </Member>
