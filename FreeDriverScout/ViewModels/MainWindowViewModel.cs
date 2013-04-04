@@ -150,6 +150,7 @@ namespace FreeDriverScout.ViewModels
             #endregion
 
             SetBackupTypes();
+            SetSocialButtonsMargin();
 
             initBackgroundWorker = new BackgroundWorker();
             initBackgroundWorker.DoWork += InitBackgroundWorkerDoWork;
@@ -183,6 +184,21 @@ namespace FreeDriverScout.ViewModels
             if (backupTypesList != null)
             {
                 backupTypesList.ItemsSource = BackupTypes;
+            }
+        }
+
+        public void SetSocialButtonsMargin()
+        {
+            var twitBtn = UIUtils.FindChild<Button>(Application.Current.MainWindow, "TweetButton");
+            if (twitBtn != null)
+            {
+                twitBtn.Margin = new Thickness(Convert.ToDouble(WPFLocalizeExtensionHelpers.GetUIString("TweetMargin")), 0, 0, 0);
+            }
+
+            var googleBtn = UIUtils.FindChild<Button>(Application.Current.MainWindow, "GoogleButton");
+            if (googleBtn != null)
+            {
+                googleBtn.Margin = new Thickness(Convert.ToDouble(WPFLocalizeExtensionHelpers.GetUIString("GoogleMargin")), 0, 0, 0);
             }
         }
 
@@ -322,7 +338,12 @@ namespace FreeDriverScout.ViewModels
                     i++;
                 }
             }
-            ThreadPool.QueueUserWorkItem(x => RunBackup(devicesToBackup, BackupType.ManualSelected));
+            if (devicesToBackup.Count == 0)
+            {
+                WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToBackup"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+                ThreadPool.QueueUserWorkItem(x => RunBackup(devicesToBackup, BackupType.ManualSelected));
         }
 
         readonly ICommand backupActionFinishedCommand;
@@ -628,10 +649,11 @@ namespace FreeDriverScout.ViewModels
 
         readonly BackgroundWorker initBackgroundWorker;
         const uint dwScanFlag = (uint)DUSDKHandler.SCAN_FLAGS.SCAN_DEVICES_PRESENT;
-        const string ExcludedDevicesXMLFilePath = "excludedDevices.xml";
-        const string BackupItemsXMLFilePath = "backupItems.xml";
+        static readonly string appFilesPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\FreeDriverScout\\";
+        readonly string ExcludedDevicesXMLFilePath = appFilesPath + "excludedDevices.xml";
+        readonly string BackupItemsXMLFilePath = appFilesPath + "backupItems.xml";
         public static readonly int DaysFromLastScanMax = 31;
-        public static readonly string FreemiumDriverScanTaskName = "FreemiumDriverScan";
+        public static readonly string FreeDriverScoutTaskName = "FreeDriverScout";
         readonly RegistryKey deviceClasses = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Class\", true);
 
         readonly Dispatcher CurrentDispatcher;
@@ -1009,23 +1031,23 @@ namespace FreeDriverScout.ViewModels
             /*
              * Schedule 
              */
-            if (TaskManager.IsTaskScheduled(FreemiumDriverScanTaskName))
+            if (TaskManager.IsTaskScheduled(FreeDriverScoutTaskName))
             {
-                Microsoft.Win32.TaskScheduler.Task task = TaskManager.GetTaskByName(FreemiumDriverScanTaskName);
+                Microsoft.Win32.TaskScheduler.Task task = TaskManager.GetTaskByName(FreeDriverScoutTaskName);
             }
             else
             {
-                TaskManager.CreateDefaultTask(FreemiumDriverScanTaskName, false);
+                TaskManager.CreateDefaultTask(FreeDriverScoutTaskName, false);
             }
-            string taskDescription = TaskManager.GetTaskDescription(FreemiumDriverScanTaskName);
+            string taskDescription = TaskManager.GetTaskDescription(FreeDriverScoutTaskName);
 
             //Fill BackupItems from XML
             if (File.Exists(BackupItemsXMLFilePath))
             {
                 try
                 {
-                    var xs = new XmlSerializer(typeof(ObservableCollection<BackupItem>));
-                    using (var rd = new StreamReader(BackupItemsXMLFilePath))
+                    XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<BackupItem>));
+                    using (StreamReader rd = new StreamReader(BackupItemsXMLFilePath))
                     {
                         BackupItems = xs.Deserialize(rd) as ObservableCollection<BackupItem>;
                     }
@@ -1038,8 +1060,8 @@ namespace FreeDriverScout.ViewModels
             {
                 try
                 {
-                    var xs = new XmlSerializer(typeof(ObservableCollection<DeviceInfo>));
-                    using (var rd = new StreamReader(ExcludedDevicesXMLFilePath))
+                    XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<DeviceInfo>));
+                    using (StreamReader rd = new StreamReader(ExcludedDevicesXMLFilePath))
                     {
                         ExcludedDevices = xs.Deserialize(rd) as ObservableCollection<DeviceInfo>;
                     }
@@ -1249,7 +1271,6 @@ namespace FreeDriverScout.ViewModels
         {
             // here we will get the progress of driver scan.
             DriverData? dd = null;
-            string driverName = string.Empty;
             string category = string.Empty;
             string VersionInstalled = string.Empty;
             string VersionUpdated = string.Empty;
@@ -1275,11 +1296,19 @@ namespace FreeDriverScout.ViewModels
                     if (data != IntPtr.Zero && !bIsStopped)
                     {
                         driverData[currentItemPos] = (DriverData)dd;
+                        string infName = string.Empty;
+                        try
+                        {
+                            infName = new FileInfo(driverData[currentItemPos].location).Name;
+                        }
+                        catch
+                        {
+                        }
                         DeviceInfo item = new DeviceInfo(
                         null,
                         driverData[currentItemPos].category,
                         driverData[currentItemPos].driverName,
-                        driverData[currentItemPos].installInf,
+                        infName,
                         driverData[currentItemPos].version,
                         currentItemPos.ToString(),
                         driverData[currentItemPos].hardwareId,
@@ -1289,11 +1318,15 @@ namespace FreeDriverScout.ViewModels
                         dtInstalled = DateTime.FromFileTime(driverData[currentItemPos].ulDateTimeQuadPart);
                         item.InstalledDriverDate = dtInstalled.ToShortDateString();
 
+                        string driverName = driverData[currentItemPos].driverName;
+                        if (driverName.Length > 46)
+                            driverName = driverName.Substring(0, 43) + "...";
+
                         if (CurrentDispatcher.Thread != null)
                         {
                             CurrentDispatcher.Invoke((MethodInvoker)delegate
                             {
-                                ScanStatusText = item.DeviceName;
+                                ScanStatusText = driverName;
 
                                 var excludedDevice = ExcludedDevices.FirstOrDefault(d => d.Id == item.Id);
                                 if (excludedDevice != null)
@@ -1323,7 +1356,6 @@ namespace FreeDriverScout.ViewModels
                 //case DUSDKHandler.PROGRESS_TYPE.PROGRESS_RETRIEVING_UPDATES_FAILED_INET:
                 //    break;
                 case DUSDKHandler.PROGRESS_TYPE.PROGRESS_FILTERING_UPDATES:
-                    //        this.UIThread(() => label3.Text = "Getting driver updates ... ");                    
                     if (data != IntPtr.Zero && !bIsStopped)
                     {
                         // get driver update information                        
@@ -1402,11 +1434,14 @@ namespace FreeDriverScout.ViewModels
                     {
                         if (data != IntPtr.Zero && dd.HasValue)
                         {
+                            string driverName = ((DriverData)dd).driverName;
+                            if (driverName.Length > 37)
+                                driverName = driverName.Substring(0, 34) + "...";
                             if (CurrentDispatcher.Thread != null)
                             {
                                 CurrentDispatcher.BeginInvoke((Action)(() =>
                                 {
-                                    ScanStatusTitle = WPFLocalizeExtensionHelpers.GetUIString("UpdateFailed") + " " + ((DriverData)dd).driverName;
+                                    ScanStatusTitle = WPFLocalizeExtensionHelpers.GetUIString("UpdateFailed") + " " + driverName;
                                     ScanStatusText = string.Empty;
                                 }));
                             }
@@ -1417,13 +1452,17 @@ namespace FreeDriverScout.ViewModels
                     {
                         if (data != IntPtr.Zero && dd.HasValue)
                         {
+                            string driverName = ((DriverData)dd).driverName;
+                            if (driverName.Length > 23)
+                                driverName = driverName.Substring(0, 20) + "...";
+
                             if (CurrentDispatcher.Thread != null)
                             {
                                 CurrentDispatcher.BeginInvoke((Action)(() =>
                                 {
                                     DownloadedDrivers.Add(new DownloadingDriverModel(WPFLocalizeExtensionHelpers.GetUIString("DownloadingDriver"), devicesForUpdate[currentItemPos]));
                                     ScanStatusTitle = WPFLocalizeExtensionHelpers.GetUIString("DownloadingDriver");
-                                    ScanStatusText = ((DriverData)dd).driverName;
+                                    ScanStatusText = driverName;// ((DriverData)dd).driverName;
                                 }));
                             }
                         }
@@ -1612,8 +1651,14 @@ namespace FreeDriverScout.ViewModels
                 }
                 else if (retval == DUSDKHandler.DefineConstants.FAIL)
                 {
-                    ScanStatusTitle = WPFLocalizeExtensionHelpers.GetUIString("UpdateFailed");
-                    ScanStatusText = string.Empty;
+                    if (CurrentDispatcher.Thread != null)
+                    {
+                        CurrentDispatcher.BeginInvoke((Action)(() =>
+                        {
+                            ScanStatusTitle = WPFLocalizeExtensionHelpers.GetUIString("UpdateFailed");
+                            ScanStatusText = string.Empty;
+                        }));
+                    }
                 }
                 else
                 {
@@ -1766,7 +1811,7 @@ namespace FreeDriverScout.ViewModels
                         );
                         SaveBackupItemsToXML();
 
-                        BackupFinishTitle = String.Format("{0} " + WPFLocalizeExtensionHelpers.GetUIString("DriversBackupedSuccesfully"), driversCount);
+                        BackupFinishTitle = String.Format(WPFLocalizeExtensionHelpers.GetUIString("DriversBackupedSuccesfully"), driversCount);
                         BackupStatus = BackupStatus.BackupFinished;
                     }));
                 }
@@ -1896,7 +1941,7 @@ namespace FreeDriverScout.ViewModels
             try
             {
                 var xs = new XmlSerializer(typeof(ObservableCollection<DeviceInfo>));
-                using (var wr = new StreamWriter(ExcludedDevicesXMLFilePath))
+                using (StreamWriter wr = new StreamWriter(ExcludedDevicesXMLFilePath))
                 {
                     xs.Serialize(wr, ExcludedDevices);
                 }
@@ -1908,8 +1953,8 @@ namespace FreeDriverScout.ViewModels
         {
             try
             {
-                var xs = new XmlSerializer(typeof(ObservableCollection<BackupItem>));
-                using (var wr = new StreamWriter(BackupItemsXMLFilePath))
+                XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<BackupItem>));
+                using (StreamWriter wr = new StreamWriter(BackupItemsXMLFilePath))
                 {
                     xs.Serialize(wr, BackupItems);
                 }

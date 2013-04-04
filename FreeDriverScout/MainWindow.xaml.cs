@@ -12,12 +12,13 @@ using FreeDriverScout.ViewModels;
 using FreeDriverScout.Views;
 using FreemiumUtilites;
 using sysUtils;
+using FreeDriverScout.Models;
 
 namespace FreeDriverScout
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary>-
     public partial class MainWindow
     {
         Style navigationButtonStyle;
@@ -187,7 +188,7 @@ namespace FreeDriverScout
         void ShowPanelScanExclusions(object sender, RoutedEventArgs e)
         {
             if (AllAnimationsComplete() && PanelScanExclusions.Visibility != Visibility.Visible)
-            {
+            {                
                 HideCurrentPanel();
                 PanelScanExclusions.Visibility = Visibility.Visible;
 

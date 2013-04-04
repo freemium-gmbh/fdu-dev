@@ -12,7 +12,7 @@ namespace FreeDriverScout.Routine
         {
             ScanStatus s1 = (ScanStatus)value;
             ScanStatus s2 = (ScanStatus)parameter;
-            return s1 == s2 ? true : false;
+            return s1 == s2 ? "True" : "False";
         }
 
         public object ConvertBack(object value, Type targetType,

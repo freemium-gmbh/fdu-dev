@@ -181,7 +181,7 @@
     <value>Driver Info</value>
   </data>
   <data name="DriversBackupedSuccesfully" xml:space="preserve">
-    <value>drivers backuped succesfully</value>
+    <value>Backup of {{0}} drivers is completed.</value>
   </data>
   <data name="DriverScan" xml:space="preserve">
     <value>Driver Scan</value>
@@ -280,10 +280,10 @@
     <value>Preferences</value>
   </data>
   <data name="PreferencesFooter" xml:space="preserve">
-    <value>Manage your Scan Exclusions</value>
+    <value>Manage application settings</value>
   </data>
   <data name="PreferencesFooterText" xml:space="preserve">
-    <value>Remove the exclusions you created in the Driver Scan</value>
+    <value>You can edit applications preferences and settings from this panel</value>
   </data>
   <data name="RebootLater" xml:space="preserve">
     <value>Reboot later</value>
@@ -522,7 +522,7 @@ Select the folder for driver downloads</value>
     <value>Scan completed</value>
   </data>
   <data name="UpdateCompleted" xml:space="preserve">
-    <value>Driver update process completed for driver</value>
+    <value>Driver update process completed for driver:</value>
   </data>
   <data name="UpdateFailed" xml:space="preserve">
     <value>Driver update process failed for driver</value>
@@ -565,5 +565,14 @@ Select the folder for driver downloads</value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
     <value>Downloaded {{0}} of {{1}}</value>
+  </data>
+  <data name="GoogleMargin" xml:space="preserve">
+    <value>-77</value>
+  </data>
+  <data name="TweetMargin" xml:space="preserve">
+    <value>-50</value>
+  </data>
+  <data name="SelectDriversToBackup" xml:space="preserve">
+    <value>Please, select at least one driver to backup</value>
   </data>
 </root>

@@ -50,15 +50,15 @@
 						</GridViewColumn>
 
 						<GridViewColumn Header="{lex:LocText FreeDriverScout:Resources:DriverDetails}"
-										Width="372">
+										Width="440">
 							<GridViewColumn.CellTemplate>
 								<DataTemplate>
 									<Grid VerticalAlignment="Top"
 										  HorizontalAlignment="Left"
-										  Width="360">
+										  Width="440">
 										<Grid.ColumnDefinitions>
 											<ColumnDefinition Width="44" />
-											<ColumnDefinition Width="291" />
+											<ColumnDefinition Width="396" />
 										</Grid.ColumnDefinitions>
 										<Grid.RowDefinitions>
 											<RowDefinition Height="20" />
@@ -100,12 +100,12 @@
 						</GridViewColumn>
 
 						<GridViewColumn Header="{lex:LocText FreeDriverScout:Resources:Version}"
-										Width="127">
+										Width="100">
 							<GridViewColumn.CellTemplate>
 								<DataTemplate>
 									<StackPanel VerticalAlignment="Top"
 												HorizontalAlignment="Left"
-												Width="127"
+												Width="100"
 												Margin="3,0,0,0">
 										<TextBlock Height="20"
 												   Padding="0,6,0,0"
@@ -121,7 +121,7 @@
 						</GridViewColumn>
 
 						<GridViewColumn Header="{lex:LocText FreeDriverScout:Resources:Options}"
-										Width="84">
+										Width="60">
 							<GridViewColumn.CellTemplate>
 								<DataTemplate>
 									<StackPanel Orientation="Horizontal"
@@ -191,9 +191,9 @@
 				<Grid>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="53" />
-						<ColumnDefinition Width="265" />
-                        <ColumnDefinition Width="162" />
-						<ColumnDefinition Width="162" />
+						<ColumnDefinition Width="301" />
+                        <ColumnDefinition Width="138" />
+						<ColumnDefinition Width="150" />
 					</Grid.ColumnDefinitions>
 					<Image Style="{StaticResource FunctionalButtonImage}"
 						   Margin="11,10,0,0"
@@ -216,14 +216,17 @@
 					</TextBlock>
 					<Button Style="{StaticResource OrangeRoundedButtonSmall}"
 							Grid.Column="3"
-							Width="149"
+							Width="137"
 							Command="{Binding UpdateCommand}"
-							Content="{lex:LocText FreeDriverScout:Resources:Update}"></Button>
+							Content="{lex:LocText FreeDriverScout:Resources:Update}"
+                            Margin="3,3,0,0"
+                            ></Button>
                     <Button Style="{StaticResource OrangeRoundedButtonSmall}"
 							Grid.Column="2"
-							Width="149"
+							Width="137"
 							Command="{Binding ShowScanCommand}"
-							Content="{lex:LocText FreeDriverScout:Resources:Cancel}"></Button>
+							Content="{lex:LocText FreeDriverScout:Resources:Cancel}"
+                            Margin="0,3,0,0"></Button>
 				</Grid>
 			</Border>
 		</Border>

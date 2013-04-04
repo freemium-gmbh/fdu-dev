@@ -10,7 +10,7 @@
 		mc:Ignorable="d"
 		x:Class="FreeDriverScout.MainWindow"
 		Style="{StaticResource MainWindowStyle}"
-		Title="Freemium Utilites"
+		Title="Free Drive Scout"
 		Name="AppMainWindow"
 		WindowStartupLocation="CenterScreen"
 		Width="716"
@@ -29,6 +29,7 @@
         <routine:PropertyEqualsToVisibilityConverter x:Key="PropertyEqualsToVisibilityConverter" />
         <routine:BackupStatusEqualsToVisibilityConverter x:Key="BackupStatusEqualsToVisibilityConverter" />
         <routine:AnyPropertyEqualsToVisibilityConverter x:Key="AnyPropertyEqualsToVisibilityConverter" />
+        <routine:ScanStatusEqualsToEnablingConverter x:Key="ScanStatusEqualsToEnablingConverter" />
     </Window.Resources>
     <Border MouseLeftButtonDown="DragWindow"
 			Style="{StaticResource WindowBorder}">
@@ -75,7 +76,7 @@
 											  Opacity="1"
 											  RenderingBias="Performance" />
 						</TextBlock.Effect>
-						Driver Utilities <Run FontWeight="Light">Professional</Run></TextBlock>
+						<Run FontWeight="Light">Free</Run> Driver Scout</TextBlock>
                         <DockPanel VerticalAlignment="Top"
 								   Margin="8,10,10,0"
 								   HorizontalAlignment="Right"
@@ -197,11 +198,11 @@
 								   Margin="30,15,0,0" />
                         <TextBlock Name="PanelBackupAndRestoreHeader"
 								   Loaded="ElementLoaded"
-								   Text="{lex:LocText FreeDriverScout:Resources:BackupAndRestore}"
+                                   Text="{lex:LocText FreeDriverScout:Resources:BackupAndRestore}"
 								   Style="{StaticResource PanelTitleText}"
 								   Visibility="Hidden"
 								   Grid.ColumnSpan="2"
-								   Margin="30,15,0,0" />
+								   Margin="30,15,0,0" />                        
                         <TextBlock Name="PanelPreferencesHeader"
 								   Loaded="ElementLoaded"
 								   Text="{lex:LocText FreeDriverScout:Resources:Preferences}"
@@ -272,7 +273,8 @@
 											   Loaded="ElementLoaded"
 											   Visibility="Hidden"
 											   HorizontalAlignment="Left"
-											   VerticalAlignment="Top" />
+											   VerticalAlignment="Top"
+                                               IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}"/>
 
                     <!--
 					*****************************************************************************
@@ -288,7 +290,8 @@
 
                         <views:PanelBackupAndRestore HorizontalAlignment="Left"
 													 VerticalAlignment="Top"
-													 Visibility="{Binding Path=BackupStatus, Converter={StaticResource BackupStatusEqualsToVisibilityConverter}, ConverterParameter={x:Static models:BackupStatus.NotStarted}}" />
+													 Visibility="{Binding Path=BackupStatus, Converter={StaticResource BackupStatusEqualsToVisibilityConverter}, ConverterParameter={x:Static models:BackupStatus.NotStarted}}" 
+                                                     IsEnabled="{Binding Path=Status, Converter={StaticResource ScanStatusEqualsToEnablingConverter}}" />
 
                         <views:PanelBackupTargetsSelection HorizontalAlignment="Left"
 														   VerticalAlignment="Top"
@@ -320,7 +323,8 @@
 											Loaded="ElementLoaded"
 											Visibility="Hidden"
 											HorizontalAlignment="Left"
-											VerticalAlignment="Top" />
+											VerticalAlignment="Top" 
+                                            />
 
                 </Grid>
 

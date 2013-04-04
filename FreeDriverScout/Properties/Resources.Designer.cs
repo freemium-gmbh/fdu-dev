@@ -385,7 +385,7 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to drivers backuped succesfully.
+        ///   Looks up a localized string similar to Backup of {{0}} drivers is completed..
         /// </summary>
         internal static string DriversBackupedSuccesfully {
             get {
@@ -561,6 +561,15 @@ namespace FreeDriverScout.Properties {
         internal static string FromScans {
             get {
                 return ResourceManager.GetString("FromScans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -77.
+        /// </summary>
+        internal static string GoogleMargin {
+            get {
+                return ResourceManager.GetString("GoogleMargin", resourceCulture);
             }
         }
         
@@ -844,7 +853,7 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage your Scan Exclusions.
+        ///   Looks up a localized string similar to Manage application settings.
         /// </summary>
         internal static string PreferencesFooter {
             get {
@@ -853,7 +862,7 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove the exclusions you created in the Driver Scan.
+        ///   Looks up a localized string similar to You can edit applications preferences and settings from this panel.
         /// </summary>
         internal static string PreferencesFooterText {
             get {
@@ -1168,6 +1177,15 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please, select at least one driver to backup.
+        /// </summary>
+        internal static string SelectDriversToBackup {
+            get {
+                return ResourceManager.GetString("SelectDriversToBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please, select at least one driver to update.
         /// </summary>
         internal static string SelectDriversToUpdate {
@@ -1278,6 +1296,15 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -50.
+        /// </summary>
+        internal static string TweetMargin {
+            get {
+                return ResourceManager.GetString("TweetMargin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tweet.
         /// </summary>
         internal static string Twitter {
@@ -1305,7 +1332,7 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Driver update process completed for driver.
+        ///   Looks up a localized string similar to Driver update process completed for driver:.
         /// </summary>
         internal static string UpdateCompleted {
             get {
