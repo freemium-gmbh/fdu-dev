@@ -479,9 +479,9 @@
       <Project>{0F189452-C6DC-4F4B-8F61-97965DF89F6C}</Project>
       <Name>FreeDriverScout.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\sysUtils\sysUtils.csproj">
+    <ProjectReference Include="..\FreemiumUtil\FreemiumUtil.csproj">
       <Project>{627DA6B0-C19A-47FB-8173-DBDBBD445938}</Project>
-      <Name>sysUtils</Name>
+      <Name>FreemiumUtil</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

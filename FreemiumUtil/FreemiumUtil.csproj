@@ -8,8 +8,8 @@
     <ProjectGuid>{627DA6B0-C19A-47FB-8173-DBDBBD445938}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>sysUtils</RootNamespace>
-    <AssemblyName>sysUtils</AssemblyName>
+    <RootNamespace>FreemiumUtil</RootNamespace>
+    <AssemblyName>FreemiumUtil</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

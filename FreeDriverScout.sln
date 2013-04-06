@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1ClickMessageSender", "1Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeDriverScout.Infrastructure", "FreeDriverScout.Infrastructure\FreeDriverScout.Infrastructure.csproj", "{0F189452-C6DC-4F4B-8F61-97965DF89F6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sysUtils", "sysUtils\sysUtils.csproj", "{627DA6B0-C19A-47FB-8173-DBDBBD445938}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreemiumUtil", "FreemiumUtil\FreemiumUtil.csproj", "{627DA6B0-C19A-47FB-8173-DBDBBD445938}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

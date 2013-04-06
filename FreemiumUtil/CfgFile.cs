@@ -5,7 +5,7 @@ using System;
 /// The <see cref="FreemiumUtil"/> namespace contains a set of Utilities regarding bug reporting, and application paths, 
 /// that was designed mainly for the freemium system Utilities, and any of its derivatives 
 /// </summary>
-namespace sysUtils
+namespace FreemiumUtil
 {
     /// <summary>
     /// Contains methods to operate with a txt config file
