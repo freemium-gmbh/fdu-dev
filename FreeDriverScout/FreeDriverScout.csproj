@@ -393,9 +393,6 @@
     <Resource Include="Images\icon-OSMigrationTool.Restore.png" />
     <Resource Include="Images\icon-question.png" />
     <Resource Include="Images\icon-app.png" />
-    <Content Include="Libraries\FreeDriverScout.Infrastructure.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Libraries\Ionic.Zip.dll" />
     <Content Include="Libraries\Ookii.Dialogs.Wpf.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -445,9 +442,6 @@
     <Content Include="Libraries\mscriptable.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Libraries\sysUtils.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Icon.ico" />
     <None Include="Resources\desktop_icon.ico" />
     <None Include="freemium.cfg">
@@ -478,10 +472,12 @@
     <ProjectReference Include="..\FreeDriverScout.Infrastructure\FreeDriverScout.Infrastructure.csproj">
       <Project>{0F189452-C6DC-4F4B-8F61-97965DF89F6C}</Project>
       <Name>FreeDriverScout.Infrastructure</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\FreemiumUtil\FreemiumUtil.csproj">
       <Project>{627DA6B0-C19A-47FB-8173-DBDBBD445938}</Project>
       <Name>FreemiumUtil</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
