@@ -169,7 +169,7 @@
     <value>Schließen</value>
   </data>
   <data name="CloseButtonBehaviour" xml:space="preserve">
-    <value>Verhalten des Schließen Button:</value>
+    <value>Verhalten beim Drücken von Schließen:</value>
   </data>
   <data name="ContactingServer" xml:space="preserve">
     <value>Mit Server verbinden um nach Updates zu suchen </value>
@@ -205,7 +205,7 @@
     <value>Treiberinformationen</value>
   </data>
   <data name="DriversBackupedSuccesfully" xml:space="preserve">
-    <value>Backup von {{0}}Treiber abgeschlossen ist.</value>
+    <value>Backup von {{0}} Treiber abgeschlossen ist.</value>
   </data>
   <data name="DriverScan" xml:space="preserve">
     <value>Treiber Scan</value>
@@ -289,7 +289,7 @@
     <value>Minimieren</value>
   </data>
   <data name="MinToTray" xml:space="preserve">
-    <value>In Taskleiste mininmieren</value>
+    <value>In Taskleiste minimieren</value>
   </data>
   <data name="Monday" xml:space="preserve">
     <value>Montag</value>
@@ -486,7 +486,7 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
     <value>Installation von Treiber für:</value>
   </data>
   <data name="OutdatedDriversUpdated" xml:space="preserve">
-    <value>Veraltete Treiber aktualisiert!</value>
+    <value>veralteter Treiber wurde aktualisiert!</value>
   </data>
   <data name="InitialLoading" xml:space="preserve">
     <value>Loading...</value>
