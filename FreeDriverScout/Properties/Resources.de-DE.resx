@@ -575,4 +575,7 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
   <data name="SelectDriversToBackup" xml:space="preserve">
     <value>Bitte wählen Sie mindestens ein Fahrer zu sichern</value>
   </data>
+  <data name="Today" xml:space="preserve">
+    <value>heute</value>
+  </data>
 </root>

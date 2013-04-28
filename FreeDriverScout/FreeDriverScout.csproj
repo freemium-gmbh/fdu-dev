@@ -151,6 +151,7 @@
     <Compile Include="Routine\Converters\PropertyEqualsToEnablingConverter.cs" />
     <Compile Include="Routine\Converters\PropertyEqualsToVisibilityConverter.cs" />
     <Compile Include="Routine\Converters\ScanStatusEqualsToVisibilityConverter.cs" />
+    <Compile Include="Routine\ExtensionMethods.cs" />
     <Compile Include="Routine\messagePipe.cs">
       <SubType>Form</SubType>
     </Compile>

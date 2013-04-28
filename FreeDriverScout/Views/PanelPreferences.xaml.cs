@@ -132,6 +132,7 @@ namespace FreeDriverScout.Views
             {
                 mainViewModel.SetBackupTypes();
                 mainViewModel.SetSocialButtonsMargin();
+                mainViewModel.SetLabels();
             }
         }
 
