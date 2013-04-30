@@ -340,7 +340,7 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloaded {{0}} of {{1}}.
+        ///   Looks up a localized string similar to Downloaded {0} of {1}.
         /// </summary>
         internal static string DownloadStatus {
             get {
@@ -745,6 +745,15 @@ namespace FreeDriverScout.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to N/A.
         /// </summary>
         internal static string NotApplicable {
@@ -759,6 +768,15 @@ namespace FreeDriverScout.Properties {
         internal static string NowScanning {
             get {
                 return ResourceManager.GetString("NowScanning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
             }
         }
         
@@ -1436,6 +1454,15 @@ namespace FreeDriverScout.Properties {
         internal static string WindowsTaskRegistrationInfo {
             get {
                 return ResourceManager.GetString("WindowsTaskRegistrationInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

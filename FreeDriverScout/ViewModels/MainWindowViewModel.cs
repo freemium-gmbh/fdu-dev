@@ -24,6 +24,7 @@ using System.Text;
 using FreemiumUtilites;
 using System.Windows.Media.Animation;
 using FreemiumUtil;
+using WPFLocalizeExtension.Engine;
 
 namespace FreeDriverScout.ViewModels
 {
@@ -344,7 +345,7 @@ namespace FreeDriverScout.ViewModels
             }
             else
             {
-                WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectBackupTypeText"), WPFLocalizeExtensionHelpers.GetUIString("SelectBackupType"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectBackupTypeText"), WPFLocalizeExtensionHelpers.GetUIString("SelectBackupType"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -368,7 +369,7 @@ namespace FreeDriverScout.ViewModels
             }
             if (devicesToBackup.Count == 0)
             {
-                WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToBackup"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToBackup"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
                 ThreadPool.QueueUserWorkItem(x => RunBackup(devicesToBackup, BackupType.ManualSelected));
@@ -508,7 +509,7 @@ namespace FreeDriverScout.ViewModels
             DeviceInfo device = AllDevices.FirstOrDefault(d => d.Id == (string)id);
             if (device != null)
             {
-                MessageBoxResult result = WPFMessageBox.Show(Application.Current.MainWindow, String.Format(WPFLocalizeExtensionHelpers.GetUIString("Exclude") + " {0} " + WPFLocalizeExtensionHelpers.GetUIString("FromScans"), device.DeviceName), WPFLocalizeExtensionHelpers.GetUIString("ExcludeDevice"), MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, String.Format(WPFLocalizeExtensionHelpers.GetUIString("Exclude") + " {0} " + WPFLocalizeExtensionHelpers.GetUIString("FromScans"), device.DeviceName), WPFLocalizeExtensionHelpers.GetUIString("ExcludeDevice"), MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     var item = DevicesForScanning.FirstOrDefault(d => d.Id == device.Id);
@@ -521,7 +522,7 @@ namespace FreeDriverScout.ViewModels
                     ExcludedDevices.Add(device);
 
                     SaveExcludedDevicesToXML();
-                    WPFMessageBox.Show(Application.Current.MainWindow, String.Format("{0} excluded from scans", device.DeviceName), "Device excluded", MessageBoxButton.OK, MessageBoxImage.Information);
+                    WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, String.Format("{0} excluded from scans", device.DeviceName), "Device excluded", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     ScanFinishTitle = String.Format("{0} " + WPFLocalizeExtensionHelpers.GetUIString("OutdatedDriversFound"), DevicesForScanning.Count(d => d.NeedsUpdate));
 
@@ -588,7 +589,7 @@ namespace FreeDriverScout.ViewModels
             }
             else
             {
-                WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectDevicesToRemoveFromExclude"), WPFLocalizeExtensionHelpers.GetUIString("SelectDevices"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectDevicesToRemoveFromExclude"), WPFLocalizeExtensionHelpers.GetUIString("SelectDevices"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -1582,12 +1583,12 @@ namespace FreeDriverScout.ViewModels
                 }
                 else
                 {
-                    WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("CheckDownloadFolder"), WPFLocalizeExtensionHelpers.GetUIString("CheckPreferences"), MessageBoxButton.OK, MessageBoxImage.Error);
+                    WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("CheckDownloadFolder"), WPFLocalizeExtensionHelpers.GetUIString("CheckPreferences"), MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
-                WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToUpdate"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversToUpdate"), WPFLocalizeExtensionHelpers.GetUIString("SelectDrivers"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -1851,7 +1852,7 @@ namespace FreeDriverScout.ViewModels
             {
                 if (CurrentDispatcher.Thread != null)
                 {
-                    CurrentDispatcher.BeginInvoke((Action)(() => WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("CheckBackupsFolder"), WPFLocalizeExtensionHelpers.GetUIString("CheckPreferences"), MessageBoxButton.OK, MessageBoxImage.Error)));
+                    CurrentDispatcher.BeginInvoke((Action)(() => WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("CheckBackupsFolder"), WPFLocalizeExtensionHelpers.GetUIString("CheckPreferences"), MessageBoxButton.OK, MessageBoxImage.Error)));
                 }
             }
         }
@@ -1904,7 +1905,7 @@ namespace FreeDriverScout.ViewModels
                     }
                     else
                     {
-                        WPFMessageBox.Show(Application.Current.MainWindow, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversForRestoreText"), WPFLocalizeExtensionHelpers.GetUIString("SelectDriversForRestoreCaption"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                        WPFMessageBox.Show(Application.Current.MainWindow, LocalizeDictionary.Instance.Culture, WPFLocalizeExtensionHelpers.GetUIString("SelectDriversForRestoreText"), WPFLocalizeExtensionHelpers.GetUIString("SelectDriversForRestoreCaption"), MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }));
             }

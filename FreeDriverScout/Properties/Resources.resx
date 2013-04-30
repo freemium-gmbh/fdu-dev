@@ -564,7 +564,7 @@ Select the folder for driver downloads</value>
     <value>Link cannot be opened automatically</value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
-    <value>Downloaded {{0}} of {{1}}</value>
+    <value>Downloaded {0} of {1}</value>
   </data>
   <data name="GoogleMargin" xml:space="preserve">
     <value>-77</value>
@@ -577,5 +577,14 @@ Select the folder for driver downloads</value>
   </data>
   <data name="Today" xml:space="preserve">
     <value>today</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

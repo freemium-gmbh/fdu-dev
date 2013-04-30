@@ -561,7 +561,7 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
     <value>Link kann nicht automatisch geöffnet werden</value>
   </data>
   <data name="DownloadStatus" xml:space="preserve">
-    <value>Heruntergeladene {{0}} von {{1}}</value>
+    <value>Heruntergeladene {0} von {1}</value>
   </data>
   <data name="GoogleMargin" xml:space="preserve">
     <value>-67</value>
@@ -577,5 +577,14 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
   </data>
   <data name="Today" xml:space="preserve">
     <value>heute</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
   </data>
 </root>
