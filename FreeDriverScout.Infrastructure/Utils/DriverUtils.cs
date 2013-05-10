@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Threading;
-using FreeDriverScout.Models;
-using System.Management;
+using System.Collections.Generic;
 using System.Diagnostics;
-using System.ComponentModel;
+using System.IO;
+using System.Management;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
 
 namespace FreeDriverScout.Utils
 {
@@ -18,97 +15,6 @@ namespace FreeDriverScout.Utils
     public class DriverUtils
     {
         #region Static Variables
-
-        // TODO: add other driver install error codes (http://msdn.microsoft.com/en-us/library/windows/hardware/ff544813%28v=vs.85%29.aspx)
-        // http://msdn.microsoft.com/en-us/library/cc231199.aspx
-
-
-        public const  Int32 ERROR_SUCCESS = 0x00000000;
-        // The catalog file has an Authenticode signature whose certificate chain terminates in a root certificate that is not trusted.
-        public const UInt64 CERT_E_EXPIRED = 0x800B0101L;
-        
-        // The certificate for the driver package is not valid for the requested usage. If the driver package does not have a valid WHQL signature, DriverPackageInstall returns this error if, in response to a driver signing dialog box, the user chose not to install a driver package, or if the caller specified the DRIVER_PACKAGE_SILENT flag.
-        public const UInt64 CERT_E_UNTRUSTEDROOT = 0x800B0109L;
-        
-        // The catalog file for the specified driver package was not found; or possibly, some other error occurred when DriverPackageInstall tried to verify the driver package signature.
-        public const UInt64 CERT_E_WRONG_USAGE = 0x800B0110L;
-        
-        // A caller of DriverPackageInstall must be a member of the Administrators group to install a driver package.
-        public const UInt64 CRYPT_E_FILE_ERROR = 80092003;
-        
-        // The current Microsoft Windows version does not support this operation.
-        public const UInt64 ERROR_ACCESS_DENIED = 0x00000005;
-        
-        //An old or incompatible version of DIFxApp.dll or DIFxAppA.dll might be present in the system. For more information about these .dll files, see How DIFxApp Works.
-        public const UInt64 ERROR_BAD_ENVIRONMENT = 0xA;
-
-        //DriverPackageInstall could not preinstall the driver package because the specified INF file is in the system INF file directory.
-        public const UInt64 ERROR_CANT_ACCESS_FILE = 0x00000780;
-
-        //The INF file that was specified by DriverPackageInfPath was not found.
-        public const UInt64 ERROR_FILE_NOT_FOUND = 0x00000002;
-        
-        //The INF file path, in characters, that was specified by DriverPackageInfPath is greater than the maximum supported path length. For more information about path length, see Specifying a Driver Package INF File Path.
-        public const UInt64 ERROR_FILENAME_EXCED_RANGE = 0x000000CE;
-
-        //The 32-bit version DIFxAPI does not work on Win64 systems. A 64-bit version of DIFxAPI is required.
-        //public const Int32 ERROR_IN_WOW64;
-
-        //The installation failed.
-        public const UInt64 ERROR_INSTALL_FAILURE = 0x00000643;
-
-        //The catalog file for the specified driver package is not valid or was not found.
-        public const UInt64 ERROR_INVALID_CATALOG_DATA = 0xE0000304;
-
-        //The specified INF file path is not valid.
-        public const UInt64 ERROR_INVALID_NAME = 0x0000007B;
-
-        //A supplied parameter is not valid.
-        public const UInt64 ERROR_INVALID_PARAMETER = 0x00000057;
-
-        //The driver package does not specify a hardware identifier or compatible identifier that is supported by the current platform.
-        public const UInt64 ERROR_NO_DEVICE_ID = 0xE0000301;
-
-        //(Applies only to PnP function drivers) The specified driver package was not installed for matching devices because the driver packages already installed for the matching devices are a better match for the devices than the specified driver package. The driver package was preinstalled unless the DRIVER_PACKAGE_ONLY_IF_DEVICE_PRESENT flag was specified.
-        public const UInt64 ERROR_NO_MORE_ITEMS = 0x00000103;
-
-        //(Applies only to PnP function drivers) The driver package was not installed on any device because there are no matching devices in the device tree. The driver package was preinstalled unless the DRIVER_PACKAGE_ONLY_IF_DEVICE_PRESENT flag was specified.
-        public const UInt64 ERROR_NO_SUCH_DEVINST = 0xE000020B;
-
-        //Available system memory was insufficient to perform the operation.
-        public const UInt64 ERROR_OUTOFMEMORY = 0x0000000E;
-
-        //A component of the driver package in the DIFx driver store is locked by a thread or process. This error can occur if a process or thread, other than the thread or process of the caller, is currently accessing the same driver package as the caller.
-        public const UInt64 ERROR_SHARING_VIOLATION = 0x00000020;
-
-        //The signing certificate is not valid for the current Windows version or it is expired.
-        public const UInt64 ERROR_SIGNATURE_OSATTRIBUTE_MISMATCH = 0xE0000244;
-
-        //The driver package type is not supported.
-        public const UInt64 ERROR_UNSUPPORTED_TYPE = 0x0000065E;
-
-        //The driver package is not signed.
-        public const UInt64 TRUST_E_NOSIGNATURE = 0x800B0101;
-
-
-        public enum DIFXAPI_LOG
-        {
-            DIFXAPI_SUCCESS = 0, // Successes
-            DIFXAPI_INFO = 1,    // Basic logging information that should always be shown
-            DIFXAPI_WARNING = 2, // Warnings
-            DIFXAPI_ERROR = 3    // Errors
-        }
-
-        public delegate void DIFLOGCALLBACK(DIFXAPI_LOG EventType, Int32 ErrorCode, [MarshalAs(UnmanagedType.LPTStr)] string EventDescription, IntPtr CallbackContext);
-
-        [DllImport("DIFxAPI.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern void SetDifxLogCallback(DIFLOGCALLBACK LogCallback, IntPtr CallbackContext);
-        
-
-
-
-
-
 
         public static string SaveDir;
         /// <summary>
@@ -133,6 +39,12 @@ namespace FreeDriverScout.Utils
         #endregion
 
         #region Methods
+
+        private static bool Is64BitWindows()
+        {
+            return IntPtr.Size == 8;
+        }
+
 
         /// <summary>
         /// Scans computer for plug-and-play allDevices.
@@ -174,6 +86,7 @@ namespace FreeDriverScout.Utils
         public bool BackupDriver(string deviceName, string infFileName, string backupDir)
         {
             bool result = false;
+
             try
             {
                 backupDir = backupDir.EndsWith("\\") ? backupDir : backupDir + "\\";
@@ -198,30 +111,46 @@ namespace FreeDriverScout.Utils
                     oldDir.Delete(true);
                 }
 
-                var windir = Environment.GetEnvironmentVariable("windir") + "\\";
 
-                // Check if driver exists in driver store
-                var driverStoreRepo = windir + "System32\\DriverStore\\FileRepository";
-                var possibleDriverDirsInStore = Directory.GetDirectories(driverStoreRepo, infFileName + "*");
 
-                if (possibleDriverDirsInStore.Length == 1)
+                /*********************************************************************************************************************/
+                /* information can be found at : http://msdn.microsoft.com/en-us/library/windows/hardware/ff553973%28v=vs.85%29.aspx */
+                /*********************************************************************************************************************/
+
+                // Check if driver exists
+                String windir = Environment.GetEnvironmentVariable("windir") + "\\";
+                String driverStorePath = windir + "System32\\DriverStore\\FileRepository";
+
+                if (Directory.Exists(driverStorePath))
                 {
-                    CopyFolder(possibleDriverDirsInStore[0], deviceBackupDir);
+                    // Driver Store (Windows Vista and Windows Server 2008, Windows 7)
+
+                    String[] possibleDriverDirsInStore = Directory.GetDirectories(driverStorePath, infFileName + "*");
+                    if (possibleDriverDirsInStore != null && possibleDriverDirsInStore.Length == 1)
+                    {
+                        CopyFolder(possibleDriverDirsInStore[0], deviceBackupDir);
+                    }
                 }
                 else
                 {
+                    // DevicePath (Windows Server 2003, Windows XP, and Windows 2000)
+
+                    RegistryKey currentVersion = Registry.LocalMachine.OpenSubKey(@"SOFTWARE").OpenSubKey("Microsoft").OpenSubKey("Windows").OpenSubKey("CurrentVersion");
+                    String[] devicePaths = currentVersion.GetValue("DevicePath").ToString().Split(';');
+                    String devicePath = devicePaths[0];
+
                     // Backup inf file
-                    var infFilePath = windir + "inf\\" + infFileName;
+                    String infFilePath = Path.Combine(devicePath, infFileName);
                     File.Copy(infFilePath, deviceBackupDir + infFileName);
 
                     // Backup PNF file
                     var pnfFileName = infFileName.Replace(".inf", ".PNF");
-                    var pnfFilePath = windir + "inf\\" + pnfFileName;
+                    var pnfFilePath = Path.Combine(devicePath, pnfFileName);
                     File.Copy(pnfFilePath, deviceBackupDir + pnfFileName);
 
                     // Backup CAT file
                     string originalCATName = IniFileUtils.GetValue(infFilePath, "Version", "CatalogFile");
-                    if (originalCATName != string.Empty)
+                    if (!String.IsNullOrEmpty(originalCATName))
                     {
                         var catName = infFileName.Replace(".inf", ".cat");
                         var catroot = Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\catroot";
@@ -237,6 +166,15 @@ namespace FreeDriverScout.Utils
                             }
                         }
                     }
+
+                    // backup "layout" file
+                    String layoutFile = IniFileUtils.GetValue(infFilePath, "Version", "LayoutFile");
+                    if (!String.IsNullOrEmpty(layoutFile))
+                    {
+                        File.Copy(Path.Combine(devicePath, layoutFile), deviceBackupDir + layoutFile);
+                    }
+
+
                     // Backup driver files from by parsing the inf file
                     if (Is64BitWindows())
                         BackupDriverFilesFromInf(".amd64", infFilePath, deviceBackupDir);
@@ -245,30 +183,9 @@ namespace FreeDriverScout.Utils
                 }
                 result = true;
             }
-            catch (Exception ex)
-            {
-            }
+            catch { }
+
             return result;
-        }
-
-
-        public static void DIFLogCallbackFunc(DIFXAPI_LOG EventType, Int32 ErrorCode, string EventDescription, IntPtr CallbackContext)
-        {
-            switch (EventType)
-            {
-                case DIFXAPI_LOG.DIFXAPI_SUCCESS:
-                    Console.WriteLine("SUCCESS: {0}. Error code: {1}", EventDescription, ErrorCode);
-                    break;
-                case DIFXAPI_LOG.DIFXAPI_INFO:
-                    Console.WriteLine("INFO: {0}. Error code: {1}", EventDescription, ErrorCode);
-                    break;
-                case DIFXAPI_LOG.DIFXAPI_WARNING:
-                    Console.WriteLine("WARNING: {0}. Error code: {1}", EventDescription, ErrorCode);
-                    break;
-                case DIFXAPI_LOG.DIFXAPI_ERROR:
-                    Console.WriteLine("ERROR: {0}. Error code: {1}", EventDescription, ErrorCode);
-                    break;
-            }
         }
 
         /// <summary>
@@ -280,30 +197,33 @@ namespace FreeDriverScout.Utils
         public bool RestoreDriver(string deviceName, string backupDir)
         {
             bool result = false;
+
             // Format paths
             deviceName = deviceName.Trim().Replace('/', ' ').Replace('\\', ' ');
             backupDir = !backupDir.EndsWith("\\") ? backupDir + "\\" : backupDir;
 
-            // Find inf file
-            var deviceBackupDirPath = backupDir + deviceName;
-
             try
             {
+                // Find inf file
+                var deviceBackupDirPath = backupDir + deviceName;
                 var deviceBackupDir = new DirectoryInfo(deviceBackupDirPath);
                 var infFile = deviceBackupDir.GetFiles("*.inf")[0];
-
-                SetDifxLogCallback(new DIFLOGCALLBACK(DIFLogCallbackFunc), IntPtr.Zero);
-
                 bool driverNeedsReboot;
-                int err = DriverPackageInstall(infFile.FullName, DRIVER_PACKAGE_FORCE, IntPtr.Zero, out driverNeedsReboot);
-//                if (err != 0)
-  //                  throw new Win32Exception(err); // << the right test was here
+
+                // http://msdn.microsoft.com/en-us/library/windows/hardware/ff544813%28v=vs.85%29.aspx
+                Int32 flags = DRIVER_PACKAGE_FORCE | DRIVER_PACKAGE_ONLY_IF_DEVICE_PRESENT;
+                if (Environment.OSVersion.Version.Major < 6) flags |= DRIVER_PACKAGE_LEGACY_MODE;
+
+                //SetDifxLogCallback(new DIFLOGCALLBACK(DIFLogCallbackFunc), IntPtr.Zero);
+                Int32 err = DriverPackageInstall(infFile.FullName, flags, IntPtr.Zero, out driverNeedsReboot);
+
                 needsReboot = needsReboot || driverNeedsReboot;
 
-                result = ((Int32)err == ERROR_SUCCESS);
+                result = (err == ERROR_SUCCESS);
             }
-            catch
-            {                
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
             }
             return result;
         }
@@ -330,54 +250,103 @@ namespace FreeDriverScout.Utils
             }
         }
 
-        private void BackupDriverFilesFromInf(string platform, string infFilePath, string deviceBackupDir)
+
+        // http://msdn.microsoft.com/en-us/library/windows/hardware/ff547465%28v=vs.85%29.aspx
+        private const String INF_SourceDisksFiles = "SourceDisksFiles";
+        private const String INF_SourceDisksNames = "SourceDisksNames";
+        private const String INF_DestinationDirs = "DestinationDirs";
+
+
+
+        private static List<String> GetDriverFiles(string platform, string infFilePath, ref String sdf)
         {
-            // Get driver files
-            var sourceDisksFiles = "SourceDisksFiles" + platform;
-            var driverFiles = IniFileUtils.GetKeys(infFilePath, sourceDisksFiles);
+            List<String> driverFiles = IniFileUtils.GetKeys(infFilePath, sdf);
             if (driverFiles.Count == 0)
             {
-                sourceDisksFiles = "SourceDisksFiles";
-                driverFiles = IniFileUtils.GetKeys(infFilePath, sourceDisksFiles);
+                sdf = INF_SourceDisksFiles;
+                driverFiles.AddRange(IniFileUtils.GetKeys(infFilePath, sdf));
             }
 
-            // Determine source disks names section
-            var sourceDisksNames = "SourceDisksNames" + platform;
-            var sourceDisk = IniFileUtils.GetKeys(infFilePath, sourceDisksNames);
-            if (sourceDisk.Count == 0)
+            return driverFiles;
+        }
+        private static List<String> GetDiskNames(string platform, string infFilePath, ref String sdn)
+        {
+            List<String> sourceDisksNames = IniFileUtils.GetKeys(infFilePath, sdn);
+            if (sourceDisksNames.Count == 0)
             {
-                sourceDisksNames = "SourceDisksNames";
+                sdn = INF_SourceDisksNames;
+                sourceDisksNames.AddRange(IniFileUtils.GetKeys(infFilePath, sdn));
             }
 
-            // Get search dirs
-            var destinationDirs = IniFileUtils.GetKeys(infFilePath, "DestinationDirs");
-            List<string> searchDirs = new List<string>();
+            return sourceDisksNames;
+        }
+        private static List<String> GetSearchDirs(string infFilePath)
+        {
+            List<String> destinationDirs = IniFileUtils.GetKeys(infFilePath, INF_DestinationDirs);
 
-            foreach (var dir in destinationDirs)
+            List<String> searchDirs = new List<String>();
+            foreach (String dir in destinationDirs)
             {
-                var dirVal = IniFileUtils.GetValue(infFilePath, "DestinationDirs", dir).Split(',');
+                var dirVal = IniFileUtils.GetValue(infFilePath, INF_DestinationDirs, dir).Split(',');
                 var dirid = int.Parse(dirVal[0]);
 
                 var searchDir = IniFileUtils.ResolveDirId(dirid);
-                if (dirVal.Length > 1)
-                    searchDir += "\\" + dirVal[1].Trim();
+                if (dirVal.Length > 1) searchDir += "\\" + dirVal[1].Trim();
 
                 searchDirs.Add(searchDir);
             }
 
-            foreach (var driverFile in driverFiles)
+            return searchDirs;
+        }
+
+        private void BackupDriverFilesFromInf(string platform, string infFilePath, string deviceBackupDir)
+        {
+            String layoutFilePath = null;
+            if (!String.IsNullOrEmpty(IniFileUtils.GetValue(infFilePath, "Version", "LayoutFile")))
             {
-                var sourceDiskId = IniFileUtils.GetValue(infFilePath, sourceDisksFiles, driverFile);
-                var sourcePath = IniFileUtils.GetValue(infFilePath, sourceDisksNames, sourceDiskId).Split(',');
+                // system-supplied INF
+                layoutFilePath = Path.Combine(Path.GetDirectoryName(infFilePath), IniFileUtils.GetValue(infFilePath, "Version", "LayoutFile"));
+            }
+
+            String sdf = INF_SourceDisksFiles + platform;
+            String sdn = INF_SourceDisksNames + platform;
+
+            // Get driver files
+            List<String> driverFiles = GetDriverFiles(platform, layoutFilePath ?? infFilePath, ref sdf);
+
+            // Determine source disks names section
+            List<String> sourceDisk = GetDiskNames(platform, layoutFilePath ?? infFilePath, ref sdn);
+
+            // Get search dirs
+            List<String> searchDirs = GetSearchDirs(infFilePath);
+
+
+            //
+            foreach (String driverFile in driverFiles)
+            {
+                /** seems to have a meaning only on windows Vista + **/
+                String[] sourceDiskIds = IniFileUtils.GetValue(layoutFilePath ?? infFilePath, sdf, driverFile).Split(',');
+
+                List<String> sourcePath = new List<String>();
+                foreach (String sourceDiskId in (from d in sourceDiskIds where !String.IsNullOrEmpty(d) select d))
+                {
+                    String[] paths = IniFileUtils.GetValue(layoutFilePath ?? infFilePath, sdn, sourceDiskId).Split(',');
+                    sourcePath.AddRange((from p in paths where !String.IsNullOrEmpty(p) select p));
+                }
+                sourcePath = sourcePath.Distinct().ToList();
+                sourcePath.Add(""); // add local path
+
 
                 var backupSubdir = deviceBackupDir;
-                if (sourcePath.Length == 4)
+                if (sourcePath.Count == 4)
                     backupSubdir = Path.Combine(deviceBackupDir, sourcePath[3]);
 
                 if (!Directory.Exists(backupSubdir))
                     Directory.CreateDirectory(backupSubdir);
+                /*********************************************************/
 
-                foreach (var possibleDir in searchDirs)
+
+                foreach (String possibleDir in searchDirs)
                 {
                     if (File.Exists(possibleDir + "\\" + driverFile))
                     {
@@ -388,14 +357,59 @@ namespace FreeDriverScout.Utils
             }
         }
 
-        private static bool Is64BitWindows()
-        {
-            return IntPtr.Size == 8;
-        }
-
         #endregion
 
         #region PInvokes
+
+        const uint ERROR_SUCCESS = 0x00000000;
+
+        private enum DIFXAPI_LOG
+        {
+            DIFXAPI_SUCCESS = 0, // Successes
+            DIFXAPI_INFO = 1,    // Basic logging information that should always be shown
+            DIFXAPI_WARNING = 2, // Warnings
+            DIFXAPI_ERROR = 3    // Errors
+        }
+
+        private delegate void DIFLOGCALLBACK(DIFXAPI_LOG EventType, Int32 ErrorCode, [MarshalAs(UnmanagedType.LPTStr)] string EventDescription, IntPtr CallbackContext);
+
+        private static void DIFLogCallbackFunc(DIFXAPI_LOG EventType, Int32 ErrorCode, string EventDescription, IntPtr CallbackContext)
+        {
+            switch (EventType)
+            {
+                case DIFXAPI_LOG.DIFXAPI_SUCCESS:
+                    Debug.WriteLine(String.Format("SUCCESS: {0}. Error code: {1}", EventDescription, ErrorCode));
+                    break;
+                case DIFXAPI_LOG.DIFXAPI_INFO:
+                    Debug.WriteLine(String.Format("INFO: {0}. Error code: {1}", EventDescription, ErrorCode));
+                    break;
+                case DIFXAPI_LOG.DIFXAPI_WARNING:
+                    Debug.WriteLine(String.Format("WARNING: {0}. Error code: {1}", EventDescription, ErrorCode));
+                    break;
+                case DIFXAPI_LOG.DIFXAPI_ERROR:
+                    Debug.WriteLine(String.Format("ERROR: {0}. Error code: {1}", EventDescription, ErrorCode));
+                    break;
+            }
+        }
+
+        [DllImport("DIFxAPI.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern void SetDifxLogCallback(DIFLOGCALLBACK LogCallback, IntPtr CallbackContext);
+
+
+
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct INSTALLERINFO
+        {
+            [MarshalAs(UnmanagedType.LPTStr)]
+            public string pApplicationId;
+            [MarshalAs(UnmanagedType.LPTStr)]
+            public string pDisplayName;
+            [MarshalAs(UnmanagedType.LPTStr)]
+            public string pProductName;
+            [MarshalAs(UnmanagedType.LPTStr)]
+            public string pMfgName;
+        }
 
         const uint SP_COPY_DELETESOURCE = 0x0000001; // delete source file on successful copy
         const uint SP_COPY_REPLACEONLY = 0x0000002; // copy only if target file already present
@@ -436,11 +450,27 @@ namespace FreeDriverScout.Utils
         private const Int32 DRIVER_PACKAGE_SILENT = 0x00000002;
         private const Int32 DRIVER_PACKAGE_REPAIR = 0x00000001;
 
+        /// <summary>
+        /// The DriverPackageInstall function preinstalls a driver package in the DIFx driver store and then installs the driver in the system.
+        /// </summary>
+        /// <param name="DriverPackageInfPath">A pointer to a NULL-terminated string that supplies the fully qualified path of the driver package's INF file of the driver package to install. The INF file cannot be in the system INF file directory.</param>
+        /// <param name="Flags">A bitwise OR of the values in the following table that control the installation operation.</param>
+        /// <param name="pInstallerInfo">A pointer to a constant INSTALLERINFO structure that supplies information about an application that is associated with the driver that is being installed. This pointer is optional and can be NULL. If the pointer is NULL, the driver package is not associated with an application.</param>
+        /// <param name="pNeedReboot">A pointer to a BOOL-typed variable. On return, DriverPackageInstall sets this variable to TRUE if a system restart is required to complete the installation. Otherwise, the function sets this variable to FALSE.</param>
+        /// <returns></returns>
         [DllImport("DIFxAPI.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern Int32 DriverPackageInstall(
             [MarshalAs(UnmanagedType.LPTStr)] string DriverPackageInfPath,
             Int32 Flags,
             IntPtr pInstallerInfo,
+            out bool pNeedReboot);
+
+
+        [DllImport("DIFxAPI.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern Int32 DriverPackageInstall(
+            [MarshalAs(UnmanagedType.LPTStr)] string DriverPackageInfPath,
+            Int32 Flags,
+            INSTALLERINFO pInstallerInfo,
             out bool pNeedReboot);
 
         #endregion

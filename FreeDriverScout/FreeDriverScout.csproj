@@ -46,6 +46,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -55,7 +56,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -334,7 +335,11 @@
     <Resource Include="Images\driver.ico" />
     <Resource Include="Images\bg-logo-flame.png" />
     <Resource Include="Images\bg-logo.png" />
-    <Content Include="stduhelper.dll">
+    <Resource Include="Images\loading.gif" />
+    <Content Include="stduhelper32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stduhelper64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="unrar.dll">
@@ -477,6 +482,15 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "$(ConfigurationName)" == "Debug" (
+  if "$(PROCESSOR_ARCHITEW6432)" == "AMD64" (
+    copy "$(SolutionDir)FreeDriverScout\stduhelper64.dll" "$(SolutionDir)FreeDriverScout\$(OutDir)stduhelper.dll"
+  ) else (
+    copy "$(SolutionDir)FreeDriverScout\stduhelper32.dll" "$(SolutionDir)FreeDriverScout\$(OutDir)stduhelper.dll"
+  )
+)</PostBuildEvent>
+  </PropertyGroup>
   <!-- <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
   To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

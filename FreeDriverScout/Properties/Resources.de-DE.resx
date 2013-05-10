@@ -124,7 +124,7 @@
     <value>Automatischer Scan</value>
   </data>
   <data name="AutoUpdateDrivers" xml:space="preserve">
-    <value>Automatisches Treiber Update</value>
+    <value>Automatisches Treiber-Update</value>
   </data>
   <data name="BackupAndRestore" xml:space="preserve">
     <value>Backup und Wiederherstellen</value>
@@ -181,7 +181,7 @@
     <value>Tag:</value>
   </data>
   <data name="DaysAgo" xml:space="preserve">
-    <value>Vor Tagen</value>
+    <value>Tage her</value>
   </data>
   <data name="DownloadComplete" xml:space="preserve">
     <value>Download abgeschlossen</value>
@@ -211,7 +211,7 @@
     <value>Treiber Scan</value>
   </data>
   <data name="DriverScanResults" xml:space="preserve">
-    <value>Ergebnisse der  Treibersuche</value>
+    <value>Ergebnisse der Treibersuche</value>
   </data>
   <data name="DriversDownloaded" xml:space="preserve">
     <value>Treiber heruntergeladen</value>
@@ -220,7 +220,7 @@
     <value>Treiber erfolgreich wiederhergestellt</value>
   </data>
   <data name="DriverUpdate" xml:space="preserve">
-    <value>Treiber Update</value>
+    <value>Treiber-Update</value>
   </data>
   <data name="EveryDay" xml:space="preserve">
     <value>Täglich</value>
@@ -349,7 +349,7 @@
     <value>Wiederherstellen</value>
   </data>
   <data name="RestoreText" xml:space="preserve">
-    <value>Wiederherstellen von System-Treiber, um eines der Backups, die Sie zuvor erstellt haben.</value>
+    <value>Wiederherstellen von System-Treiber aus einem der Backups, das Sie zuvor erstellt haben.</value>
   </data>
   <data name="RunOSMigrationRestoreTool" xml:space="preserve">
     <value>Treiber wiederherstellen</value>
@@ -370,10 +370,10 @@
     <value>Scan:</value>
   </data>
   <data name="ScanAndUpdateDrivers" xml:space="preserve">
-    <value>Scan &amp; Treiber Update</value>
+    <value>Scan &amp; Treiber-Update</value>
   </data>
   <data name="ScanExclusions" xml:space="preserve">
-    <value>Scan Ausschlüsse</value>
+    <value>Von Scan ausschließen</value>
   </data>
   <data name="ScanFooter" xml:space="preserve">
     <value>System regelmäßig scannen</value>
@@ -382,19 +382,19 @@
     <value>Regelmäßige Wartung verbessert die Systemleistung</value>
   </data>
   <data name="ScanForIssues" xml:space="preserve">
-    <value>Problemsuche</value>
+    <value>Treiber-Scan</value>
   </data>
   <data name="ScanningDevice" xml:space="preserve">
     <value>Laufwerk scannen -</value>
   </data>
   <data name="ScanProgress" xml:space="preserve">
-    <value>Scan verbessern</value>
+    <value>SCAN-FORTSCHRITT</value>
   </data>
   <data name="SelectBackupType" xml:space="preserve">
     <value>Art des Backups auswählen</value>
   </data>
   <data name="SelectBackupTypeText" xml:space="preserve">
-    <value>Bitte wählen Sie die Art des Backups um fortzufahren</value>
+    <value>Bitte wählen Sie die Art des Backups um fortzufahren.</value>
   </data>
   <data name="SelectDevices" xml:space="preserve">
     <value>Laufwerk auswählen</value>
@@ -412,7 +412,7 @@
     <value>Warum sollte ich Backups erstellen?</value>
   </data>
   <data name="SelectDriversForBackupFooterText" xml:space="preserve">
-    <value>Entfernen Sie Ausschlüsse in der Treiber Suche</value>
+    <value>Sie können diese Treiber später, falls nötig, wiederherstellen</value>
   </data>
   <data name="SelectDriversForRestore" xml:space="preserve">
     <value>Treiber für die Wiederherstellung auswählen</value>
@@ -421,17 +421,17 @@
     <value>Treiber für die Wiederherstellung auswählen</value>
   </data>
   <data name="SelectDriversForRestoreText" xml:space="preserve">
-    <value>Bitte wählen Sie für die Wiederherstellung mindestens einen Treiber aus</value>
+    <value>Bitte wählen Sie mindestens einen Treiber zur Wiederherstellung aus.</value>
   </data>
   <data name="SelectDriversToUpdate" xml:space="preserve">
-    <value>Bitte wählen Sie mindestens einen Treiber aus, um ihn zu aktualisieren</value>
+    <value>Bitte wählen Sie mindestens einen Treiber zum Aktualisieren aus.</value>
   </data>
   <data name="SelectDriversZip" xml:space="preserve">
     <value>DriverData.zip auswählen</value>
   </data>
   <data name="SelectFolderForBackups" xml:space="preserve">
     <value>
-Wählen Sie einen Ordner zum Speichern von Backups Treibern</value>
+Wählen Sie einen Ordner zum Speichern von Backup-Treibern</value>
   </data>
   <data name="SelectFolderForDownloads" xml:space="preserve">
     <value>
@@ -474,7 +474,7 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
     <value>Warum sollte ich Backups erstellen?</value>
   </data>
   <data name="WhyCreateBackupsText" xml:space="preserve">
-    <value>Entfernen Sie Ausschlüsse in der Treiber Suche</value>
+    <value>Sie können diese Treiber später, falls nötig, wiederherstellen</value>
   </data>
   <data name="WindowsStartup" xml:space="preserve">
     <value>Windows Startverhalten:</value>
@@ -513,13 +513,13 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
     <value>Alle Rechte vorbehalten.</value>
   </data>
   <data name="RootUrl" xml:space="preserve">
-    <value>http://www.freemium.com/fdu</value>
+    <value>http://freemium.com/free-driver-scout/</value>
   </data>
   <data name="FeedbackUrl" xml:space="preserve">
     <value>http://de.freemium.com/kontakt/fdc/</value>
   </data>
   <data name="ScanCompleted" xml:space="preserve">
-    <value>Scan completed</value>
+    <value>Scan fertig</value>
   </data>
   <data name="UpdateCompleted" xml:space="preserve">
     <value>Driver update process completed for driver</value>
@@ -573,7 +573,7 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
     <value>Treiber-Update fehlgeschlagen für Fahrer:</value>
   </data>
   <data name="SelectDriversToBackup" xml:space="preserve">
-    <value>Bitte wählen Sie mindestens ein Fahrer zu sichern</value>
+    <value>Bitte wählen Sie mindestens einen Treiber zum Sichern aus.</value>
   </data>
   <data name="Today" xml:space="preserve">
     <value>heute</value>
@@ -589,5 +589,17 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
   </data>
   <data name="DriverExcluded" xml:space="preserve">
     <value>{0} von Scans ausgeschlossen</value>
+  </data>
+  <data name="RestoreFailedCaption" xml:space="preserve">
+    <value>Wiederherstellung fehlgeschlagen</value>
+  </data>
+  <data name="RestoreFailedText" xml:space="preserve">
+    <value>Leider ist die Wiederherstellung der gewählten Treiber fehlgeschlagen.</value>
+  </data>
+  <data name="DriverListLoading" xml:space="preserve">
+    <value>Treiber-Liste wird geladen</value>
+  </data>
+  <data name="DriverListLoadingText" xml:space="preserve">
+    <value>Die Treiber-Liste wird noch im Hintergrund geladen. Bitte warten Sie einen Moment und versuchen Sie das Backup dann erneut.</value>
   </data>
 </root>
