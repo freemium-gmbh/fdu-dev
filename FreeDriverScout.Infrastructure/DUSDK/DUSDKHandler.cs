@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.ComponentModel;
 
 namespace DUSDK_for.NET
 {
     public class DUSDKHandler
     {
-
         /// <summary>
         /// To receive the progress while scan and driver update process
         /// PUT IT ANYWHERE IN CLASS WHERE YOU WANT TO RECEIVES THE PROGRESS
@@ -53,7 +51,7 @@ namespace DUSDK_for.NET
         /// <param name="szRegistryLoc"></param>
         /// <returns></returns>
         [DllImport(@"stduhelper.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-        internal static extern int scanDeviceDriversForUpdates(progressCallback pFunc,
+        public static extern int scanDeviceDriversForUpdates(progressCallback pFunc,
             StringBuilder szProductKey,
             StringBuilder szAppDataLoc,
             StringBuilder szTempLoc,
@@ -66,10 +64,10 @@ namespace DUSDK_for.NET
         
 
         [DllImport(@"stduhelper.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-	    internal static extern bool cancelOperation(int operation);
+        public static extern bool cancelOperation(int operation);
 
         [DllImport(@"stduhelper.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-        internal static extern int updateDeviceDriversEx(
+        public static extern int updateDeviceDriversEx(
             [In, Out] progressCallback pFunc,
             [In] StringBuilder szProductKey,
             [In] StringBuilder szAppDataLoc,
@@ -88,7 +86,7 @@ namespace DUSDK_for.NET
          * OS Migration tool functions
         /************************************************************************/
         [DllImport(@"stduhelper.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-        internal static extern int OSMT_scanDeviceDriversForUpdates(
+        public static extern int OSMT_scanDeviceDriversForUpdates(
             progressCallback pFunc,
             StringBuilder szProductKey,
             StringBuilder szAppDataLoc,
@@ -105,7 +103,7 @@ namespace DUSDK_for.NET
 
 
         [DllImport(@"stduhelper.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-        internal static extern int OSMT_updateDeviceDriversEx(
+        public static extern int OSMT_updateDeviceDriversEx(
             [In, Out] progressCallback pFunc,
             [In] StringBuilder szProductKey,
             [In] StringBuilder szAppDataLoc,
@@ -306,9 +304,6 @@ namespace DUSDK_for.NET
             PROGRESS_RETRIEVED_UPDATES_DATA,
         }
 
-
-
-
         public enum UPDATE_FLAGS
         {
             UPDATE_FLAG_DOWNLOAD_ONLY = 1,
@@ -318,13 +313,7 @@ namespace DUSDK_for.NET
             UPDATE_FLAG_UPDATE_DRIVERS_ONLY = 16,
             UPDATE_FLAG_RESTORE_ARCHIVE_ONLY = 32,
             UPDATE_FLAG_ALL = 64
-        };
-
-
-        
-
-
-
+        };      
 
         #endregion
 
@@ -600,10 +589,28 @@ namespace DUSDK_for.NET
         [MarshalAs(UnmanagedType.LPTStr)]
         public string enumLoc;        
 
-        public IntPtr UpdateDriver;
-       
+        public IntPtr UpdateDriver;      
+    }
 
-    }  
-
-    
+    public enum DU_SUPPORTED_OS_NAMES
+    {
+        [Description("Default Os")]
+        DEFAULT_OS = -1,
+        [Description("Windows XP 32 bit")]
+        WIN_XP_INTEL = 0,		// Windows XP 32 bit
+        [Description("Windows XP 64 bit")]
+        WIN_XP_AMD4 = 1,		// Windows XP 64 bit
+        [Description("Windows Vista 32 bit")]
+        WIN_VISTA_INTEL = 2,	// Windows Vista 32 bit
+        [Description("Windows Vista 64 bit")]
+        WIN_VISTA_AMD64 = 3,	// Windows Vista 64 bit
+        [Description("Windows 7 32 bit")]
+        WIN_7_INTEL = 4,		// Windows 7 32 bit
+        [Description("Windows 7 64 bit")]
+        WIN_7_AMD64 = 5,		// Windows 7 64 bit
+        [Description("Windows 8 32 bit")]
+        WIN_8_INTEL = 6,		// Windows 8 32 bit
+        [Description("Windows 8 64 bit")]
+        WIN_8_AMD64 = 7,		// Windows 8 64 bit
+    };
 }

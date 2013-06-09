@@ -264,12 +264,10 @@ namespace FreeDriverScout
             }
             if (context.SelectedIndex == 1)
             {
-                /*temporarly commented by Alexandra
                 OpenOSMigrationToolPopup();
             }
             if (context.SelectedIndex == 2)
             {
-                 */
                 Process.Start(new ProcessStartInfo(WPFLocalizeExtensionHelpers.GetUIString("FeedbackUrl")));
             }
             // This needed to save state unchecked

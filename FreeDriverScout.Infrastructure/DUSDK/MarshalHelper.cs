@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Runtime.InteropServices;
 
 namespace DUSDK_for.NET
 {
-    static class MarshalHelper
-    {       
- 
-
+    public static class MarshalHelper
+    {
         /// <summary>
         /// Copies structure array to IntPtr
         /// </summary>

@@ -602,4 +602,11 @@ Wählen Sie einen Ordner für heruntergeladene Treiber</value>
   <data name="DriverListLoadingText" xml:space="preserve">
     <value>Die Treiber-Liste wird noch im Hintergrund geladen. Bitte warten Sie einen Moment und versuchen Sie das Backup dann erneut.</value>
   </data>
+  <data name="BeforeDriverUpdateMessage" xml:space="preserve">
+    <value>Bitte schließen Sie alle offenen Programme bevor Sie mit dem Treiber-Update fortfahren.
+Es ist möglich, dass der Bildschirm während des Updates kurzzeitig schwarz wird.</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Fortfahren</value>
+  </data>
 </root>
