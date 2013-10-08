@@ -321,6 +321,12 @@
     <Content Include="difxapi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="stduhelper32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="stduhelper64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="unrar.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -363,9 +369,6 @@
     <Resource Include="Images\icon-question.png" />
     <Resource Include="Images\icon-app.png" />
     <Content Include="Libraries\Ookii.Dialogs.Wpf.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Libraries\System.Tuples.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Routine\messagePipe.resx">
@@ -447,8 +450,19 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if "$(ConfigurationName)" == "Debug" (
+  if "$(PROCESSOR_ARCHITEW6432)" == "AMD64" (
+    copy "$(SolutionDir)FreeDriverScout\stduhelper64.dll" "$(SolutionDir)FreeDriverScout.Infrastructure\$(OutDir)stduhelper.dll"
+    copy "$(SolutionDir)FreeDriverScout\stduhelper64.dll" "$(SolutionDir)FreeDriverScout\$(OutDir)stduhelper.dll"
+    copy "$(SolutionDir)FreeDriverScout\stduhelper64.dll" "$(SolutionDir)FreeDriverScout.OSMigrationTool.Backup\$(OutDir)stduhelper.dll"
+    copy "$(SolutionDir)FreeDriverScout\stduhelper64.dll" "$(SolutionDir)FreeDriverScout.OSMigrationTool.Restore\$(OutDir)stduhelper.dll"
+  ) else (
+    copy "$(SolutionDir)FreeDriverScout\stduhelper32.dll" "$(SolutionDir)FreeDriverScout.Infrastructure\$(OutDir)stduhelper.dll"
+    copy "$(SolutionDir)FreeDriverScout\stduhelper32.dll" "$(SolutionDir)FreeDriverScout\$(OutDir)stduhelper.dll"
+    copy "$(SolutionDir)FreeDriverScout\stduhelper32.dll" "$(SolutionDir)FreeDriverScout.OSMigrationTool.Backup\$(OutDir)stduhelper.dll"
+    copy "$(SolutionDir)FreeDriverScout\stduhelper32.dll" "$(SolutionDir)FreeDriverScout.OSMigrationTool.Restore\$(OutDir)stduhelper.dll"
+  )
+)</PostBuildEvent>
   </PropertyGroup>
   <!-- <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
   To modify your build process, add your task inside one of the targets below and uncomment it. 
